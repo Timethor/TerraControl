@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>com.timethor.minecraft</groupId>
+        <artifactId>terraincontrol</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../</relativePath>
+    </parent>
+    
+    <!-- Basic Info -->
+    <groupId>com.timethor.minecraft</groupId>
+    <artifactId>terrainControl-forge</artifactId>
+    <name>TerrainControl-Plus:>Forge</name>
+    <description>${project.artifactId} contains the Forge specific elements of the TerrainControl Module Group</description>
+    <url>http://www.github.org/Timethor/TerrainControl-Plus</url>
+    
+    <!-- Current Version of Forge side of the code -->
+    <version>Forge.0.0.1-SNAPSHOT</version>
+    <!-- This tells Maven to make us a *.jar file -->
+    <packaging>jar</packaging>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- When build fails, check here for up to date minecraft and forge release version numbers    -->
+        <!-- http://www.minecraftforge.net/forum/index.php/board,3.0.html   -->
+        <minecraft.version>1.5.2</minecraft.version>
+        <forge.version>7.8.1</forge.version>
+    </properties>
+    
+    <scm>
+        <developerConnection>scm:git:git@github.com:Timethor/TerrainControl-Plus.git</developerConnection>
+        <connection>scm:git:git://github.com/Timethor/TerrainControl-Plus.git</connection>
+        <url>http://www.github.org/Timethor/TerrainControl-Plus/tree/master</url>
+    </scm>
+    
+    <build>
+        <directory>build</directory>
+        <outputDirectory>build/classes</outputDirectory>
+        <finalName>${project.artifactId}</finalName>
+        <testOutputDirectory>build/test-classes</testOutputDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>ForgeMod</artifactId>
+            <version>${minecraft.version}-${forge.version}-SNAPSHOT</version>
+            <type>pom</type>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    
+    <repositories>
+        <repository>
+            <id>md_5-snapshots</id>
+            <url>http://repo.md-5.net/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>    
+        
+</project>

@@ -1,0 +1,53 @@
+name: TerrainControl-Plus
+version: 2.4.12
+description: Advanced custom world generator. Based on Khorn's TerrainControl, which is based on R-T-B's PhoenixTerrainMod, which itself is based on Bucyruss' BiomeTerrainMod.
+authors: ['Timethor']
+main: com.timethor.terraincontrol.platform.bukkit.TC_Plugin
+load: startup
+commands:
+    tcp:
+        description: TerrainControl commands
+        usage: |
+              /<command> <check> [world] - Checks TC is enable for this world.
+              /<command> <reload> [world] - Reload config
+              /<command> <biome> [-f] - Show current chunk biome and block stats
+              /<command> <list> - Show list of loaded BOB's 
+              /<command> <map> - Generate a biome map image
+              /<command> <spawn> [BobName] - Spawn a BOB with BobName at your cursor
+        aliases: [terraincontrolplus]
+permissions:
+    tcp.*:
+        default: false
+        children:
+            tc.cmd.*: true
+    tcp.cmd.*:
+        default: false
+        children:
+            tcp.cmd.biome: true
+            tcp.cmd.check: true
+            tcp.cmd.help: true
+            tcp.cmd.list: true
+            tcp.cmd.map: true
+            tcp.cmd.reload: true
+            tcp.cmd.spawn: true
+    tcp.cmd.biome:
+        default: op
+        description: show chunk biome and block stats
+    tcp.cmd.check:
+        default: op
+        description: check/create TC settings for world
+    tcp.cmd.help:
+        default: op
+        description: show help
+    tcp.cmd.list:
+        default: op
+        description: list bo2 objects
+    tcp.cmd.map:
+        default: op
+        description: generate biome map image
+    tcp.cmd.reload:
+        default: op
+        description: reload world settings
+    tcp.cmd.spawn:
+        default: op
+        description: spawn bo2 where you look

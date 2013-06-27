@@ -1,0 +1,19 @@
+[
+{
+  "modid": "TerrainControl-Plus",
+  "name": "Terrain Control Plus",
+  "description": "Advanced custom world generator. Based on Khorn's TerrainControl, which is based on R-T-B's PhoenixTerrainMod, which itself is based on Bucyruss' BiomeTerrainMod.",
+  "url": "http://www.github.com/Timethor/TerrainControl++/",
+  "updateUrl": "",
+  "authors": [
+    "Timethor"
+  ],
+  "credits": "",
+  "logoFile": "/tclogo.png",
+  "screenshots": [
+  ],
+  "dependencies": [
+     
+  ]
+}
+]

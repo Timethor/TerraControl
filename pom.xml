@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!-- Basic Info -->
+    <groupId>com.timethor.minecraft</groupId>
+    <artifactId>terraincontrol</artifactId>
+    <name>TerrainControl-Plus</name>
+    <description>${project.name} basically allows you to customize Minecraft's terrain generation to control ore spawns, terrain types, biome size, ...basically everything.</description>
+    <version>0.0.1-SNAPSHOT</version>
+    
+    <!-- This makes this project an aggregator, run this and it will build all the modules listed below -->
+    <packaging>pom</packaging>
+
+    <!-- Any Code Modules go here -->
+    <modules>
+        <module>core</module>
+        <module>platform/bukkit</module>
+        <module>platform/forge</module>
+    </modules>
+        
+    <scm>
+        <developerConnection>scm:git:git@github.com:Timethor/TerrainControl-Plus.git</developerConnection>
+        <connection>scm:git:git://github.com/Timethor/TerrainControl-Plus.git</connection>
+        <url>http://www.github.org/Timethor/TerrainControl-Plus/tree/master</url>
+    </scm>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <outputDirectory>dist</outputDirectory>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>1.6</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <configuration>
+                                <minimizeJar>true</minimizeJar>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+            
+</project>
