@@ -4,7 +4,7 @@
     
     <parent>        
         <groupId>com.timethor.minecraft</groupId>
-        <artifactId>terraincontrol</artifactId>
+        <artifactId>terracontrol</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../../</relativePath>
     </parent>
@@ -12,10 +12,10 @@
     
     <!-- Basic Info -->
     <groupId>com.timethor.minecraft</groupId>
-    <artifactId>terraincontrol-bukkit</artifactId>
-    <name>TerrainControl-Plus:>Bukkit</name>
+    <artifactId>terracontrol-bukkit</artifactId>
+    <name>TerraControl:>Bukkit</name>
     <description>${project.name} contains the Bukkit specific elements of the TerrainControl family of plugins</description>
-    <url>http://www.github.org/Timethor/TerrainControl</url>
+    <url>http://www.github.org/Timethor/TerraControl</url>
     
     <!-- Current Version of Bukkit side of the code -->
     <version>Bukkit.0.0.1-SNAPSHOT</version>

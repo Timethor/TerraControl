@@ -11,10 +11,10 @@
     
     <!-- Basic Info -->
     <groupId>com.timethor</groupId>
-    <artifactId>terrainControl-core</artifactId>
-    <name>TerrainControl-Plus:Core</name>
+    <artifactId>terracontrol-core</artifactId>
+    <name>TerraControl::Core</name>
     <description>${project.name} contains the core elements of the TerrainControl Module Group</description>
-    <url>http://www.github.org/Timethor/TerrainControl</url>
+    <url>http://www.github.org/Timethor/TerraControl</url>
     
     <!-- Current Version of Forge side of the code -->
     <version>Core.0.0.1-SNAPSHOT</version>

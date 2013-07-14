@@ -4,17 +4,17 @@
     
     <parent>
         <groupId>com.timethor.minecraft</groupId>
-        <artifactId>terraincontrol</artifactId>
+        <artifactId>terracontrol</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../../</relativePath>
     </parent>
     
     <!-- Basic Info -->
     <groupId>com.timethor.minecraft</groupId>
-    <artifactId>terrainControl-forge</artifactId>
-    <name>TerrainControl-Plus:>Forge</name>
-    <description>${project.artifactId} contains the Forge specific elements of the TerrainControl Module Group</description>
-    <url>http://www.github.org/Timethor/TerrainControl-Plus</url>
+    <artifactId>terracontrol-forge</artifactId>
+    <name>TerrainControl:>Forge</name>
+    <description>${project.artifactId} contains the Forge specific elements of the TerraControl Module Group</description>
+    <url>http://www.github.org/Timethor/TerraControl</url>
     
     <!-- Current Version of Forge side of the code -->
     <version>Forge.0.0.1-SNAPSHOT</version>
