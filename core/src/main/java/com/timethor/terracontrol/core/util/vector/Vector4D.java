@@ -4,7 +4,7 @@ import com.timethor.terracontrol.core.util.MathHelper;
 
 public class Vector4D extends Vector3D {
 
-    private double w;
+    protected double w;
 
     public Vector4D() {
     }
@@ -59,72 +59,72 @@ public class Vector4D extends Vector3D {
     }
 
     public static Vector4D add(Vector4D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 += b0.getX();
-            y0 += b0.getY();
+            x0 += b0.x;
+            y0 += b0.y;
         }
-        return new Vector4D(x0, y0, a.getZ(), a.w);
+        return new Vector4D(x0, y0, a.z, a.w);
     }
 
     public static Vector4D add(Vector4D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 += b0.getX();
-            y0 += b0.getY();
-            z0 += b0.getZ();
+            x0 += b0.x;
+            y0 += b0.y;
+            z0 += b0.z;
         }
         return new Vector4D(x0, y0, z0, a.w);
     }
 
     public static Vector4D add(Vector4D a, Vector4D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         double w0 = a.w;
         for (Vector4D b0 : b) {
-            x0 += b0.getX();
-            y0 += b0.getY();
-            z0 += b0.getZ();
+            x0 += b0.x;
+            y0 += b0.y;
+            z0 += b0.z;
             w0 += b0.w;
         }
         return new Vector4D(x0, y0, z0, w0);
     }
 
     public static Vector4D sub(Vector4D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 -= b0.getX();
-            y0 -= b0.getY();
+            x0 -= b0.x;
+            y0 -= b0.y;
         }
-        return new Vector4D(x0, y0, a.getZ(), a.w);
+        return new Vector4D(x0, y0, a.z, a.w);
     }
 
     public static Vector4D sub(Vector4D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 -= b0.getX();
-            y0 -= b0.getY();
-            z0 -= b0.getZ();
+            x0 -= b0.x;
+            y0 -= b0.y;
+            z0 -= b0.z;
         }
         return new Vector4D(x0, y0, z0, a.w);
     }
 
     public static Vector4D sub(Vector4D a, Vector4D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         double w0 = a.w;
         for (Vector4D b0 : b) {
-            x0 -= b0.getX();
-            y0 -= b0.getY();
-            z0 -= b0.getZ();
+            x0 -= b0.x;
+            y0 -= b0.y;
+            z0 -= b0.z;
             w0 -= b0.w;
         }
         return new Vector4D(x0, y0, z0, w0);
@@ -135,7 +135,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector4D(a.getX() + b1, a.getY() + b1, a.getZ() + b1, a.w + b1);
+        return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
     public static Vector4D shfit(Vector4D a, float... b) {
@@ -143,7 +143,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector4D(a.getX() + b1, a.getY() + b1, a.getZ() + b1, a.w + b1);
+        return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
     public static Vector4D shift(Vector4D a, long... b) {
@@ -151,7 +151,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector4D(a.getX() + b1, a.getY() + b1, a.getZ() + b1, a.w + b1);
+        return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
     public static Vector4D shift(Vector4D a, int... b) {
@@ -159,40 +159,40 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector4D(a.getX() + b1, a.getY() + b1, a.getZ() + b1, a.w + b1);
+        return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
     public static Vector4D mult(Vector4D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 *= b0.getX();
-            y0 *= b0.getY();
+            x0 *= b0.x;
+            y0 *= b0.y;
         }
-        return new Vector4D(x0, y0, a.getZ(), a.w);
+        return new Vector4D(x0, y0, a.z, a.w);
     }
 
     public static Vector4D mult(Vector4D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 *= b0.getX();
-            y0 *= b0.getY();
-            z0 *= b0.getZ();
+            x0 *= b0.x;
+            y0 *= b0.y;
+            z0 *= b0.z;
         }
         return new Vector4D(x0, y0, z0, a.w);
     }
 
     public static Vector4D mult(Vector4D a, Vector4D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         double w0 = a.w;
         for (Vector4D b0 : b) {
-            x0 *= b0.getX();
-            y0 *= b0.getY();
-            z0 *= b0.getZ();
+            x0 *= b0.x;
+            y0 *= b0.y;
+            z0 *= b0.z;
             w0 *= b0.w;
         }
         return new Vector4D(x0, y0, z0, w0);
@@ -203,7 +203,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector4D(a.getX() * b1, a.getY() * b1, a.getZ() * b1, a.w * b1);
+        return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
     public static Vector4D mult(Vector4D a, float... b) {
@@ -211,7 +211,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector4D(a.getX() * b1, a.getY() * b1, a.getZ() * b1, a.w * b1);
+        return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
     public static Vector4D mult(Vector4D a, long... b) {
@@ -219,7 +219,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector4D(a.getX() * b1, a.getY() * b1, a.getZ() * b1, a.w * b1);
+        return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
     public static Vector4D mult(Vector4D a, int... b) {
@@ -227,7 +227,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector4D(a.getX() * b1, a.getY() * b1, a.getZ() * b1, a.w * b1);
+        return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
     public static double dot(Vector4D a, Vector4D b) {
@@ -236,43 +236,43 @@ public class Vector4D extends Vector3D {
 
     public static Vector4D cross(Vector4D a, Vector4D b, Vector4D c) {
         return new Vector4D(
-            MathHelper.abs(a.getX() * (b.getZ() * c.w - c.getZ() * b.w) - a.getZ() * (b.getY() * c.w - c.getY() * b.w) + a.w * (b.getY() * c.getZ() - c.getY() * b.getZ())),
-            MathHelper.abs(-a.getX() * (b.getZ() * c.w - c.getZ() * b.w) + a.getZ() * (b.getX() * c.w - c.getX() * b.w) - a.w * (b.getX() * c.getZ() - c.getX() * b.getZ())),
-            MathHelper.abs(a.getX() * (b.getY() * c.w - c.getY() * b.w) - a.getY() * (b.getX() * c.w - c.getX() * b.w) + a.w * (b.getX() * c.getY() - c.getX() * b.getY())),
-            MathHelper.abs(-a.getX() * (b.getY() * c.getZ() - c.getY() * b.getZ()) + a.getY() * (b.getX() * c.getZ() - c.getX() * b.getZ()) - a.getZ() * (b.getX() * c.getY() - c.getX() * b.getY())));
+            MathHelper.abs(a.x * (b.z * c.w - c.z * b.w) - a.z * (b.y * c.w - c.y * b.w) + a.w * (b.y * c.z - c.y * b.z)),
+            MathHelper.abs(-a.x * (b.z * c.w - c.z * b.w) + a.z * (b.x * c.w - c.x * b.w) - a.w * (b.x * c.z - c.x * b.z)),
+            MathHelper.abs(a.x * (b.y * c.w - c.y * b.w) - a.y * (b.x * c.w - c.x * b.w) + a.w * (b.x * c.y - c.x * b.y)),
+            MathHelper.abs(-a.x * (b.y * c.z - c.y * b.z) + a.y * (b.x * c.z - c.x * b.z) - a.z * (b.x * c.y - c.x * b.y)));
     }
 
     public static Vector4D div(Vector4D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 /= b0.getX();
-            y0 /= b0.getY();
+            x0 /= b0.x;
+            y0 /= b0.y;
         }
-        return new Vector4D(x0, y0, a.getZ(), a.w);
+        return new Vector4D(x0, y0, a.z, a.w);
     }
 
     public static Vector4D div(Vector4D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 /= b0.getX();
-            y0 /= b0.getY();
-            z0 /= b0.getZ();
+            x0 /= b0.x;
+            y0 /= b0.y;
+            z0 /= b0.z;
         }
         return new Vector4D(x0, y0, z0, a.w);
     }
 
     public static Vector4D div(Vector4D a, Vector4D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
-        double z0 = a.getZ();
+        double x0 = a.x;
+        double y0 = a.y;
+        double z0 = a.z;
         double w0 = a.w;
         for (Vector4D b0 : b) {
-            x0 /= b0.getX();
-            y0 /= b0.getY();
-            z0 /= b0.getZ();
+            x0 /= b0.x;
+            y0 /= b0.y;
+            z0 /= b0.z;
             w0 /= b0.w;
         }
         return new Vector4D(x0, y0, z0, w0);
@@ -283,7 +283,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Vector4D(a.getX() / b1, a.getY() / b1, a.getZ() / b1, a.w / b1);
+        return new Vector4D(a.x / b1, a.y / b1, a.z / b1, a.w / b1);
     }
 
     public static Vector4D div(Vector4D a, float... b) {
@@ -291,7 +291,7 @@ public class Vector4D extends Vector3D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Vector4D(a.getX() / b1, a.getY() / b1, a.getZ() / b1, a.w / b1);
+        return new Vector4D(a.x / b1, a.y / b1, a.z / b1, a.w / b1);
     }
 
     @Override

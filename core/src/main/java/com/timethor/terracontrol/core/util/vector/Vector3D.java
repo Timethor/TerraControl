@@ -2,7 +2,7 @@ package com.timethor.terracontrol.core.util.vector;
 
 public class Vector3D extends Vector2D {
 
-    private double z;
+    protected double z;
 
     public Vector3D() {
     }
@@ -47,44 +47,44 @@ public class Vector3D extends Vector2D {
     }
 
     public static Vector3D add(Vector3D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 += b0.getX();
-            y0 += b0.getY();
+            x0 += b0.x;
+            y0 += b0.y;
         }
         return new Vector3D(x0, y0, a.z);
     }
 
     public static Vector3D add(Vector3D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 += b0.getX();
-            y0 += b0.getY();
+            x0 += b0.x;
+            y0 += b0.y;
             z0 += b0.z;
         }
         return new Vector3D(x0, y0, z0);
     }
 
     public static Vector3D sub(Vector3D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 -= b0.getX();
-            y0 -= b0.getY();
+            x0 -= b0.x;
+            y0 -= b0.y;
         }
         return new Vector3D(x0, y0, a.z);
     }
 
     public static Vector3D sub(Vector3D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 -= b0.getX();
-            y0 -= b0.getY();
+            x0 -= b0.x;
+            y0 -= b0.y;
             z0 -= b0.z;
         }
         return new Vector3D(x0, y0, z0);
@@ -95,7 +95,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector3D(a.getX() + b1, a.getY() + b1, a.z + b1);
+        return new Vector3D(a.x + b1, a.y + b1, a.z + b1);
     }
 
     public static Vector3D shift(Vector3D a, float... b) {
@@ -103,7 +103,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector3D(a.getX() + b1, a.getY() + b1, a.z + b1);
+        return new Vector3D(a.x + b1, a.y + b1, a.z + b1);
     }
 
     public static Vector3D shift(Vector3D a, long... b) {
@@ -111,7 +111,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector3D(a.getX() + b1, a.getY() + b1, a.z + b1);
+        return new Vector3D(a.x + b1, a.y + b1, a.z + b1);
     }
 
     public static Vector3D shift(Vector3D a, int... b) {
@@ -119,26 +119,26 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Vector3D(a.getX() + b1, a.getY() + b1, a.z + b1);
+        return new Vector3D(a.x + b1, a.y + b1, a.z + b1);
     }
 
     public static Vector3D mult(Vector3D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 *= b0.getX();
-            y0 *= b0.getY();
+            x0 *= b0.x;
+            y0 *= b0.y;
         }
         return new Vector3D(x0, y0, a.z);
     }
 
     public static Vector3D mult(Vector3D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 *= b0.getX();
-            y0 *= b0.getY();
+            x0 *= b0.x;
+            y0 *= b0.y;
             z0 *= b0.z;
         }
         return new Vector3D(x0, y0, z0);
@@ -149,7 +149,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector3D(a.getX() * b1, a.getY() * b1, a.z * b1);
+        return new Vector3D(a.x * b1, a.y * b1, a.z * b1);
     }
 
     public static Vector3D mult(Vector3D a, float... b) {
@@ -157,7 +157,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector3D(a.getX() * b1, a.getY() * b1, a.z * b1);
+        return new Vector3D(a.x * b1, a.y * b1, a.z * b1);
     }
 
     public static Vector3D mult(Vector3D a, long... b) {
@@ -165,7 +165,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector3D(a.getX() * b1, a.getY() * b1, a.z * b1);
+        return new Vector3D(a.x * b1, a.y * b1, a.z * b1);
     }
 
     public static Vector3D mult(Vector3D a, int... b) {
@@ -173,7 +173,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Vector3D(a.getX() * b1, a.getY() * b1, a.z * b1);
+        return new Vector3D(a.x * b1, a.y * b1, a.z * b1);
     }
 
     public static double dot(Vector3D a, Vector3D b) {
@@ -182,28 +182,28 @@ public class Vector3D extends Vector2D {
 
     public static Vector3D cross(Vector3D a, Vector3D b) {
         return new Vector3D(
-            (a.getY() * b.getZ()) - (a.getZ() * b.getY()),
-            (a.getZ() * b.getX()) - (a.getX() * b.getZ()),
+            (a.y * b.z) - (a.z * b.y),
+            (a.z * b.x) - (a.x * b.z),
             Vector2D.cross(a, b));
     }
 
     public static Vector3D div(Vector3D a, Vector2D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         for (Vector2D b0 : b) {
-            x0 /= b0.getX();
-            y0 /= b0.getY();
+            x0 /= b0.x;
+            y0 /= b0.y;
         }
         return new Vector3D(x0, y0, a.z);
     }
 
     public static Vector3D div(Vector3D a, Vector3D... b) {
-        double x0 = a.getX();
-        double y0 = a.getY();
+        double x0 = a.x;
+        double y0 = a.y;
         double z0 = a.z;
         for (Vector3D b0 : b) {
-            x0 /= b0.getX();
-            y0 /= b0.getY();
+            x0 /= b0.x;
+            y0 /= b0.y;
             z0 /= b0.z;
         }
         return new Vector3D(x0, y0, z0);
@@ -214,7 +214,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Vector3D(a.getX() / b1, a.getY() / b1, a.z / b1);
+        return new Vector3D(a.x / b1, a.y / b1, a.z / b1);
     }
 
     public static Vector3D div(Vector3D a, float... b) {
@@ -222,7 +222,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Vector3D(a.getX() / b1, a.getY() / b1, a.z / b1);
+        return new Vector3D(a.x / b1, a.y / b1, a.z / b1);
     }
 
     public static Vector3D div(Vector3D a, long... b) {
@@ -230,7 +230,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Vector3D(a.getX() / b1, a.getY() / b1, a.z / b1);
+        return new Vector3D(a.x / b1, a.y / b1, a.z / b1);
     }
 
     public static Vector3D div(Vector3D a, int... b) {
@@ -238,7 +238,7 @@ public class Vector3D extends Vector2D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Vector3D(a.getX() / b1, a.getY() / b1, a.z / b1);
+        return new Vector3D(a.x / b1, a.y / b1, a.z / b1);
     }
 
     public static Vector3D componentMax(Vector3D a, Vector3D... b) {
@@ -303,7 +303,7 @@ public class Vector3D extends Vector2D {
 
     public static Vector3D normalize(Vector3D a) {
         double scale = 1.0f / a.magnitude();
-        return new Vector3D(a.getX() * scale, a.getY() * scale, a.getZ() * scale);
+        return new Vector3D(a.x * scale, a.y * scale, a.z * scale);
     }
 
     public static Vector3D lerp(Vector3D a, Vector3D b, double blend) {

@@ -4,8 +4,8 @@ import com.timethor.terracontrol.core.util.MathHelper;
 
 public class Coordinate2D {
 
-    private int x;
-    private int y;
+    protected int x;
+    protected int y;
 
     public Coordinate2D() {
     }
@@ -252,6 +252,4 @@ public class Coordinate2D {
     public void setY(int y) {
         this.y = y;
     }
-    
-    
 }

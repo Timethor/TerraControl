@@ -2,8 +2,8 @@ package com.timethor.terracontrol.core.util.vector;
 
 public class Vector2D {
 
-    private double x;
-    private double y;
+    protected double x;
+    protected double y;
 
     public Vector2D() {
     }
