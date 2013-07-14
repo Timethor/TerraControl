@@ -1,0 +1,3 @@
+Logging:{
+    Level: [Off, Severe, Warning, Info, Config, Fine, Finer, Finest, All]
+}
