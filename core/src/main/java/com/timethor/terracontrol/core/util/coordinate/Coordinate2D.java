@@ -30,7 +30,7 @@ public class Coordinate2D {
      * @param x The x part of a new 2D point
      * @param z The z part of a new 2D point
      */
-    public Coordinate2D(int x, int z) {
+    protected Coordinate2D(int x, int z) {
         this.x = x;
         this.z = z;
     }
@@ -40,9 +40,32 @@ public class Coordinate2D {
      * <p/>
      * @param other
      */
-    public Coordinate2D(Coordinate2D other) {
+    protected Coordinate2D(Coordinate2D other) {
         this.x = other.x;
         this.z = other.z;
+    }
+
+    /**
+     * Returns a new 2D coordinate based on a given x and z component
+     * <p/>
+     * @param x The x component of this coordinate
+     * @param z The z component of this coordinate
+     * <p/>
+     * @return A new 2D coordinate
+     */
+    public static Coordinate2D make2d(int x, int z) {
+        return new Coordinate2D(x, z);
+    }
+
+    /**
+     * Returns a new 2D coordinate based on another 2d Coordinate
+     * <p/>
+     * @param other The base of the new coordinate
+     * <p/>
+     * @return A new 2D coordinate
+     */
+    public static Coordinate2D make2d(Coordinate2D other) {
+        return new Coordinate2D(other);
     }
 
     //>>	END CONSTRUCTORS

@@ -28,7 +28,7 @@ public class Coordinate3D extends Coordinate2D {
      * @param x The x part of a new 3D point
      * @param z The z part of a new 3D point
      */
-    public Coordinate3D(int x, int z) {
+    protected Coordinate3D(int x, int z) {
         super(x, z);
         this.y = 0;
     }
@@ -40,7 +40,7 @@ public class Coordinate3D extends Coordinate2D {
      * @param y The y part of a new 3D point
      * @param z The z part of a new 3D point
      */
-    public Coordinate3D(int x, int y, int z) {
+    protected Coordinate3D(int x, int y, int z) {
         super(x, z);
         this.y = y;
     }
@@ -53,7 +53,7 @@ public class Coordinate3D extends Coordinate2D {
      *              point
      * @param y     The y part of a new 3D point
      */
-    public Coordinate3D(Coordinate2D other, int y) {
+    protected Coordinate3D(Coordinate2D other, int y) {
         super(other);
         this.y = y;
     }
@@ -63,9 +63,57 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param other
      */
-    public Coordinate3D(Coordinate3D other) {
+    protected Coordinate3D(Coordinate3D other) {
         super(other);
         this.y = other.y;
+    }
+
+    /**
+     * Returns a new 3D coordinate based on x and z components with a y=0
+     * <p/>
+     * @param x The x component of this coordinate
+     * @param z The z component of this coordinate
+     * <p/>
+     * @return A new 3D coordinate
+     */
+    public static Coordinate3D make3D(int x, int z) {
+        return new Coordinate3D(x, z);
+    }
+
+    /**
+     * Returns a new 3D coordinate based on x, y, and z components
+     * <p/>
+     * @param x The x component of this coordinate
+     * @param y The y component of this coordinate
+     * @param z The z component of this coordinate
+     * <p/>
+     * @return A new 3D coordinate
+     */
+    public static Coordinate3D make3D(int x, int y, int z) {
+        return new Coordinate3D(x, y, z);
+    }
+
+    /**
+     * Returns a new 3D coordinate based on a 2D point and a y component
+     * <p/>
+     * @param other A 2D point containing the x and z components
+     * @param y     The y component of this coordinate
+     * <p/>
+     * @return A new 3D coordinate
+     */
+    public static Coordinate3D make3D(Coordinate2D other, int y) {
+        return new Coordinate3D(other, y);
+    }
+
+    /**
+     * Returns a new 3D coordinate based on another 3D point
+     * <p/>
+     * @param other A 3D point containing the x, y, and z components
+     * <p/>
+     * @return A new 3D coordinate
+     */
+    public static Coordinate3D make3D(Coordinate3D other) {
+        return new Coordinate3D(other);
     }
 
     //>>	END CONSTRUCTORS
