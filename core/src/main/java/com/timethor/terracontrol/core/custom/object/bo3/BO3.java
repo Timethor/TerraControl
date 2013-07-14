@@ -11,7 +11,7 @@ import com.timethor.terracontrol.core.custom.object.Rotation;
 import com.timethor.terracontrol.core.custom.object.StructuredCustomObject;
 import com.timethor.terracontrol.core.custom.object.bo3.BO3Settings.OutsideSourceBlock;
 import com.timethor.terracontrol.core.custom.object.bo3.BO3Settings.SpawnHeightSetting;
-import com.timethor.terracontrol.core.util.MathHelper;
+import com.timethor.terracontrol.core.util.RandomHelper;
 
 import java.io.File;
 import java.util.Map;
@@ -148,7 +148,7 @@ public class BO3 implements StructuredCustomObject {
         Rotation rotation = settings.rotateRandomly ? Rotation.getRandomRotation(random) : Rotation.NORTH;
         int y = 0;
         if (settings.spawnHeight == SpawnHeightSetting.randomY) {
-            y = MathHelper.getRandomNumberInRange(random, settings.minHeight, settings.maxHeight);
+            y = RandomHelper.getRandomNumberInRange(random, settings.minHeight, settings.maxHeight);
         }
         if (settings.spawnHeight == SpawnHeightSetting.highestBlock) {
             y = world.getHighestBlockYAt(x, z);
@@ -220,7 +220,7 @@ public class BO3 implements StructuredCustomObject {
     public CustomObjectCoordinate makeCustomObjectCoordinate(Random random, int chunkX, int chunkZ) {
         if (settings.rarity > random.nextDouble() * 100.0) {
             Rotation rotation = settings.rotateRandomly ? Rotation.getRandomRotation(random) : Rotation.NORTH;
-            int height = MathHelper.getRandomNumberInRange(random, settings.minHeight, settings.maxHeight);
+            int height = RandomHelper.getRandomNumberInRange(random, settings.minHeight, settings.maxHeight);
             return new CustomObjectCoordinate(this, rotation, chunkX * 16 + 8 + random.nextInt(16), height, chunkZ * 16 + 8 + random.nextInt(16));
         }
         return null;
