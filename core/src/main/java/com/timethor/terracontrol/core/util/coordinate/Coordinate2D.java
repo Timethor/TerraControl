@@ -3,7 +3,8 @@ package com.timethor.terracontrol.core.util.coordinate;
 import com.timethor.terracontrol.core.util.MathHelper;
 
 /**
- *
+ * Represents a second dimension coordinate
+ * <p/>
  * @author Timethor
  */
 public class Coordinate2D {
