@@ -4,29 +4,29 @@ import com.timethor.terracontrol.core.util.MathHelper;
 
 public class Coordinate3D extends Coordinate2D {
 
-    protected int z;
+    protected int y;
 
     public Coordinate3D() {
     }
 
-    public Coordinate3D(int x, int y) {
-        super(x, y);
-        this.z = 0;
+    public Coordinate3D(int x, int z) {
+        super(x, z);
+        this.y = 0;
     }
 
     public Coordinate3D(int x, int y, int z) {
-        super(x, y);
-        this.z = z;
+        super(x, z);
+        this.y = y;
     }
 
-    public Coordinate3D(Coordinate2D other, int z) {
+    public Coordinate3D(Coordinate2D other, int y) {
         super(other);
-        this.z = z;
+        this.y = y;
     }
 
     public Coordinate3D(Coordinate3D other) {
         super(other);
-        this.z = other.z;
+        this.y = other.y;
     }
 
     //>>	END CONSTRUCTORS
@@ -37,7 +37,7 @@ public class Coordinate3D extends Coordinate2D {
 
     @Override
     public int magnitudeSqared() {
-        return super.magnitudeSqared() + z * z;
+        return super.magnitudeSqared() + y * y;
     }
 
     public static <T extends Coordinate2D> T getGenericVector(T a) {
@@ -50,44 +50,44 @@ public class Coordinate3D extends Coordinate2D {
 
     public static Coordinate3D add(Coordinate3D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int y0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 += b0.x;
-            y0 += b0.y;
+            y0 += b0.z;
         }
-        return new Coordinate3D(x0, y0, a.z);
+        return new Coordinate3D(x0, y0, a.y);
     }
 
     public static Coordinate3D add(Coordinate3D a, Coordinate3D... b) {
         int x0 = a.x;
-        int y0 = a.y;
-        int z0 = a.z;
+        int y0 = a.z;
+        int z0 = a.y;
         for (Coordinate3D b0 : b) {
             x0 += b0.x;
-            y0 += b0.y;
-            z0 += b0.z;
+            y0 += b0.z;
+            z0 += b0.y;
         }
         return new Coordinate3D(x0, y0, z0);
     }
 
     public static Coordinate3D sub(Coordinate3D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int y0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 -= b0.x;
-            y0 -= b0.y;
+            y0 -= b0.z;
         }
-        return new Coordinate3D(x0, y0, a.z);
+        return new Coordinate3D(x0, y0, a.y);
     }
 
     public static Coordinate3D sub(Coordinate3D a, Coordinate3D... b) {
         int x0 = a.x;
-        int y0 = a.y;
-        int z0 = a.z;
+        int y0 = a.z;
+        int z0 = a.y;
         for (Coordinate3D b0 : b) {
             x0 -= b0.x;
-            y0 -= b0.y;
-            z0 -= b0.z;
+            y0 -= b0.z;
+            z0 -= b0.y;
         }
         return new Coordinate3D(x0, y0, z0);
     }
@@ -97,27 +97,27 @@ public class Coordinate3D extends Coordinate2D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Coordinate3D(MathHelper.floor_int(a.x + b1), MathHelper.floor_int(a.y + b1), MathHelper.floor_int(a.z + b1));
+        return new Coordinate3D(MathHelper.floor_int(a.x + b1), MathHelper.floor_int(a.z + b1), MathHelper.floor_int(a.y + b1));
     }
 
     public static Coordinate3D mult(Coordinate3D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int z0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 *= b0.x;
-            y0 *= b0.y;
+            z0 *= b0.z;
         }
-        return new Coordinate3D(x0, y0, a.z);
+        return new Coordinate3D(x0, z0, a.y);
     }
 
     public static Coordinate3D mult(Coordinate3D a, Coordinate3D... b) {
         int x0 = a.x;
-        int y0 = a.y;
-        int z0 = a.z;
+        int y0 = a.z;
+        int z0 = a.y;
         for (Coordinate3D b0 : b) {
             x0 *= b0.x;
-            y0 *= b0.y;
-            z0 *= b0.z;
+            y0 *= b0.z;
+            z0 *= b0.y;
         }
         return new Coordinate3D(x0, y0, z0);
     }
@@ -127,38 +127,38 @@ public class Coordinate3D extends Coordinate2D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Coordinate3D(MathHelper.floor_int(a.x * b1), MathHelper.floor_int(a.y * b1), MathHelper.floor_int(a.z * b1));
+        return new Coordinate3D(MathHelper.floor_int(a.x * b1), MathHelper.floor_int(a.z * b1), MathHelper.floor_int(a.y * b1));
     }
 
     public static double dot(Coordinate3D a, Coordinate3D b) {
-        return Coordinate2D.dot(a, b) + a.z * b.z;
+        return Coordinate2D.dot(a, b) + a.y * b.y;
     }
 
     public static Coordinate3D cross(Coordinate3D a, Coordinate3D b) {
         return new Coordinate3D(
-            MathHelper.floor_int((a.y * b.z) - (a.z * b.y)),
-            MathHelper.floor_int((a.z * b.x) - (a.x * b.z)),
+            MathHelper.floor_int((a.z * b.y) - (a.y * b.z)),
+            MathHelper.floor_int((a.y * b.x) - (a.x * b.y)),
             Coordinate2D.cross(a, b));
     }
 
     public static Coordinate3D div(Coordinate3D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int y0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 /= b0.x;
-            y0 /= b0.y;
+            y0 /= b0.z;
         }
-        return new Coordinate3D(x0, y0, a.z);
+        return new Coordinate3D(x0, y0, a.y);
     }
 
     public static Coordinate3D div(Coordinate3D a, Coordinate3D... b) {
         int x0 = a.x;
-        int y0 = a.y;
-        int z0 = a.z;
+        int y0 = a.z;
+        int z0 = a.y;
         for (Coordinate3D b0 : b) {
             x0 /= b0.x;
-            y0 /= b0.y;
-            z0 /= b0.z;
+            y0 /= b0.z;
+            z0 /= b0.y;
         }
         return new Coordinate3D(x0, y0, z0);
     }
@@ -168,13 +168,13 @@ public class Coordinate3D extends Coordinate2D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Coordinate3D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.y / b1), MathHelper.floor_int(a.z / b1));
+        return new Coordinate3D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.z / b1), MathHelper.floor_int(a.y / b1));
     }
 
     public static Coordinate3D componentMax(Coordinate3D a, Coordinate3D... b) {
         a = (Coordinate3D) Coordinate2D.componentMax(a, b);
         for (Coordinate3D b0 : b) {
-            a.z = a.z > b0.z ? a.z : b0.z;
+            a.y = a.y > b0.y ? a.y : b0.y;
         }
         return a;
     }
@@ -182,7 +182,7 @@ public class Coordinate3D extends Coordinate2D {
     public static Coordinate3D componentMin(Coordinate3D a, Coordinate3D... b) {
         a = (Coordinate3D) Coordinate2D.componentMax(a, b);
         for (Coordinate3D b0 : b) {
-            a.z = a.z < b0.z ? a.z : b0.z;
+            a.y = a.y < b0.y ? a.y : b0.y;
         }
         return a;
     }
@@ -203,19 +203,19 @@ public class Coordinate3D extends Coordinate2D {
 
     public static Coordinate3D clamp(Coordinate3D a, Coordinate3D min, Coordinate3D max) {
         a = (Coordinate3D) Coordinate2D.clamp(a, min, max);
-        a.z = a.z < min.z ? min.z : (a.z > max.z ? max.z : a.z);
+        a.y = a.y < min.y ? min.y : (a.y > max.y ? max.y : a.y);
         return a;
     }
 
     public static Coordinate3D clamp(Coordinate3D a, int min, int max) {
         a = (Coordinate3D) Coordinate2D.clamp(a, min, max);
-        a.z = a.z < min ? min : (a.z > max ? max : a.z);
+        a.y = a.y < min ? min : (a.y > max ? max : a.y);
         return a;
     }
 
     public static Coordinate3D lerp(Coordinate3D a, Coordinate3D b, int blend) {
         a = (Coordinate3D) Coordinate2D.lerp(a, b, blend);
-        a.z = MathHelper.floor_int(blend * (b.z - a.z) + a.z);
+        a.y = MathHelper.floor_int(blend * (b.y - a.y) + a.y);
         return a;
     }
 
@@ -231,7 +231,7 @@ public class Coordinate3D extends Coordinate2D {
     @Override
     public int hashCode() {
         int hash = super.hashCode();
-        hash = 29 * hash + this.z;
+        hash = 29 * hash + this.y;
         return hash;
     }
 
@@ -239,7 +239,7 @@ public class Coordinate3D extends Coordinate2D {
     public boolean equals(Object obj) {
         if (super.equals(obj) && obj instanceof Coordinate3D) {
             final Coordinate3D other = (Coordinate3D) obj;
-            if (this.z != other.z) {
+            if (this.y != other.y) {
                 return false;
             }
             return true;
@@ -247,11 +247,11 @@ public class Coordinate3D extends Coordinate2D {
         return false;
     }
 
-    public int getZ() {
-        return z;
+    public int getY() {
+        return y;
     }
 
-    public void setZ(int z) {
-        this.z = z;
+    public void setY(int y) {
+        this.y = y;
     }
 }

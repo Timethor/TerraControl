@@ -5,19 +5,19 @@ import com.timethor.terracontrol.core.util.MathHelper;
 public class Coordinate2D {
 
     protected int x;
-    protected int y;
+    protected int z;
 
     public Coordinate2D() {
     }
 
-    public Coordinate2D(int x, int y) {
+    public Coordinate2D(int x, int z) {
         this.x = x;
-        this.y = y;
+        this.z = z;
     }
 
     public Coordinate2D(Coordinate2D other) {
         this.x = other.x;
-        this.y = other.y;
+        this.z = other.z;
     }
 
     //>>	END CONSTRUCTORS
@@ -26,7 +26,7 @@ public class Coordinate2D {
     }
 
     public int magnitudeSqared() {
-        return x * x + y * y;
+        return x * x + z * z;
     }
 
     public static <T extends Coordinate2D> T getGenericVector(T a) {
@@ -39,20 +39,20 @@ public class Coordinate2D {
 
     public static Coordinate2D add(Coordinate2D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int y0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 += b0.x;
-            y0 += b0.y;
+            y0 += b0.z;
         }
         return new Coordinate2D(x0, y0);
     }
 
     public static Coordinate2D sub(Coordinate2D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int y0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 -= b0.x;
-            y0 -= b0.y;
+            y0 -= b0.z;
         }
         return new Coordinate2D(x0, y0);
     }
@@ -62,7 +62,7 @@ public class Coordinate2D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Coordinate2D(MathHelper.floor_int(a.x + b1), MathHelper.floor_int(a.y + b1));
+        return new Coordinate2D(MathHelper.floor_int(a.x + b1), MathHelper.floor_int(a.z + b1));
     }
 
     public static Coordinate2D shift(Coordinate2D a, float... b) {
@@ -70,7 +70,7 @@ public class Coordinate2D {
         for (double b0 : b) {
             b1 += b0;
         }
-        return new Coordinate2D(MathHelper.floor_int(a.x + b1), MathHelper.floor_int(a.y + b1));
+        return new Coordinate2D(MathHelper.floor_int(a.x + b1), MathHelper.floor_int(a.z + b1));
     }
 
     public static Coordinate2D shift(Coordinate2D a, int... b) {
@@ -78,15 +78,15 @@ public class Coordinate2D {
         for (int b0 : b) {
             b1 += b0;
         }
-        return new Coordinate2D(a.x + b1, a.y + b1);
+        return new Coordinate2D(a.x + b1, a.z + b1);
     }
 
     public static Coordinate2D mult(Coordinate2D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int y0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 *= b0.x;
-            y0 *= b0.y;
+            y0 *= b0.z;
         }
         return new Coordinate2D(x0, y0);
     }
@@ -96,7 +96,7 @@ public class Coordinate2D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Coordinate2D(MathHelper.floor_int(a.x * b1), MathHelper.floor_int(a.y * b1));
+        return new Coordinate2D(MathHelper.floor_int(a.x * b1), MathHelper.floor_int(a.z * b1));
     }
 
     public static Coordinate2D mult(Coordinate2D a, float... b) {
@@ -104,7 +104,7 @@ public class Coordinate2D {
         for (double b0 : b) {
             b1 *= b0;
         }
-        return new Coordinate2D(MathHelper.floor_int(a.x * b1), MathHelper.floor_int(a.y * b1));
+        return new Coordinate2D(MathHelper.floor_int(a.x * b1), MathHelper.floor_int(a.z * b1));
     }
 
     public static Coordinate2D mult(Coordinate2D a, int... b) {
@@ -112,23 +112,23 @@ public class Coordinate2D {
         for (int b0 : b) {
             b1 *= b0;
         }
-        return new Coordinate2D(a.x * b1, a.y * b1);
+        return new Coordinate2D(a.x * b1, a.z * b1);
     }
 
     public static int dot(Coordinate2D a, Coordinate2D b) {
-        return a.x * b.x + a.y * b.y;
+        return a.x * b.x + a.z * b.z;
     }
 
     public static int cross(Coordinate2D a, Coordinate2D b) {
-        return (a.x * b.y) - (a.y * b.x);
+        return (a.x * b.z) - (a.z * b.x);
     }
 
     public static Coordinate2D div(Coordinate2D a, Coordinate2D... b) {
         int x0 = a.x;
-        int y0 = a.y;
+        int y0 = a.z;
         for (Coordinate2D b0 : b) {
             x0 /= b0.x;
-            y0 /= b0.y;
+            y0 /= b0.z;
         }
         return new Coordinate2D(x0, y0);
     }
@@ -138,7 +138,7 @@ public class Coordinate2D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Coordinate2D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.y / b1));
+        return new Coordinate2D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.z / b1));
     }
 
     public static Coordinate2D div(Coordinate2D a, float... b) {
@@ -146,7 +146,7 @@ public class Coordinate2D {
         for (double b0 : b) {
             b1 /= b0;
         }
-        return new Coordinate2D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.y / b1));
+        return new Coordinate2D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.z / b1));
     }
 
     public static Coordinate2D div(Coordinate2D a, int... b) {
@@ -154,13 +154,13 @@ public class Coordinate2D {
         for (int b0 : b) {
             b1 /= b0;
         }
-        return new Coordinate2D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.y / b1));
+        return new Coordinate2D(MathHelper.floor_int(a.x / b1), MathHelper.floor_int(a.z / b1));
     }
 
     public static Coordinate2D componentMax(Coordinate2D a, Coordinate2D... b) {
         for (Coordinate2D b0 : b) {
             a.x = a.x > b0.x ? a.x : b0.x;
-            a.y = a.y > b0.y ? a.y : b0.y;
+            a.z = a.z > b0.z ? a.z : b0.z;
         }
         return a;
     }
@@ -168,7 +168,7 @@ public class Coordinate2D {
     public static Coordinate2D componentMin(Coordinate2D a, Coordinate2D... b) {
         for (Coordinate2D b0 : b) {
             a.x = a.x < b0.x ? a.x : b0.x;
-            a.y = a.y < b0.y ? a.y : b0.y;
+            a.z = a.z < b0.z ? a.z : b0.z;
         }
         return a;
     }
@@ -189,19 +189,19 @@ public class Coordinate2D {
 
     public static Coordinate2D clamp(Coordinate2D a, Coordinate2D min, Coordinate2D max) {
         a.x = a.x < min.x ? min.x : (a.x > max.x ? max.x : a.x);
-        a.y = a.y < min.y ? min.y : (a.y > max.y ? max.y : a.y);
+        a.z = a.z < min.z ? min.z : (a.z > max.z ? max.z : a.z);
         return a;
     }
 
     public static Coordinate2D clamp(Coordinate2D a, int min, int max) {
         a.x = MathHelper.floor_int(a.x < min ? min : (a.x > max ? max : a.x));
-        a.y = MathHelper.floor_int(a.y < min ? min : (a.y > max ? max : a.y));
+        a.z = MathHelper.floor_int(a.z < min ? min : (a.z > max ? max : a.z));
         return a;
     }
 
     public static Coordinate2D lerp(Coordinate2D a, Coordinate2D b, int blend) {
         a.x = blend * (b.x - a.x) + a.x;
-        a.y = blend * (b.y - a.y) + a.y;
+        a.z = blend * (b.z - a.z) + a.z;
         return a;
     }
 
@@ -218,7 +218,7 @@ public class Coordinate2D {
     public int hashCode() {
         int hash = 7;
         hash = 59 * hash + this.x;
-        hash = 59 * hash + this.y;
+        hash = 59 * hash + this.z;
         return hash;
     }
 
@@ -229,7 +229,7 @@ public class Coordinate2D {
         }
         if (obj instanceof Coordinate2D) {
             final Coordinate2D other = (Coordinate2D) obj;
-            if (this.x != other.x || this.y != other.y) {
+            if (this.x != other.x || this.z != other.z) {
                 return false;
             }
             return true;
@@ -241,15 +241,15 @@ public class Coordinate2D {
         return x;
     }
 
-    public int getY() {
-        return y;
+    public int getZ() {
+        return z;
     }
 
     public void setX(int x) {
         this.x = x;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setZ(int z) {
+        this.z = z;
     }
 }
