@@ -6,23 +6,28 @@
         <groupId>com.timethor.minecraft</groupId>
         <artifactId>terracontrol</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
+        <relativePath>../../</relativePath>
     </parent>
     
     <!-- Basic Info -->
     <groupId>com.timethor.minecraft</groupId>
-    <artifactId>terracontrol-core</artifactId>
-    <name>TerraControl::Core</name>
-    <description>${project.name} contains the core elements of the TerrainControl Module Group</description>
+        <artifactId>terracontrol-release</artifactId>
+        
+    <name>TerraControl:>Release</name>
+    <description>${project.artifactId} contains the Forge specific elements of the TerraControl Module Group</description>
     <url>http://www.github.org/Timethor/TerraControl</url>
     
     <!-- Current Version of Forge side of the code -->
-    <version>Core.0.0.1-SNAPSHOT</version>
+    <version>Release-0.0.1-SNAPSHOT</version>
     <!-- This tells Maven to make us a *.jar file -->
     <packaging>jar</packaging>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- When build fails, check here for up to date minecraft and forge release version numbers    -->
+        <!-- http://www.minecraftforge.net/forum/index.php/board,3.0.html   -->
+        <minecraft.version>1.5.2</minecraft.version>
+        <forge.version>7.8.1</forge.version>
     </properties>
     
     <scm>
@@ -30,37 +35,45 @@
         <connection>scm:git:git://github.com/Timethor/TerrainControl-Plus.git</connection>
         <url>http://www.github.org/Timethor/TerrainControl-Plus/tree/master</url>
     </scm>
-
+    
     <build>
         <directory>build</directory>
         <outputDirectory>build/classes</outputDirectory>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>TerraControl</finalName>
         <testOutputDirectory>build/test-classes</testOutputDirectory>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-        </plugins>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
     
+    <dependencies>
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-bukkit</artifactId>
+            <version>Bukkit.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-forge</artifactId>
+            <version>Forge.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>  
+        
 </project>

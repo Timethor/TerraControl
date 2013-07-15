@@ -32,9 +32,9 @@
     </properties>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:Timethor/TerrainControl-Plus.git</developerConnection>
-        <connection>scm:git:git://github.com/Timethor/TerrainControl-Plus.git</connection>
-        <url>http://www.github.org/Timethor/TerrainControl-Plus/tree/master</url>
+        <developerConnection>scm:git:git@github.com:Timethor/TerraControl.git</developerConnection>
+        <connection>scm:git:git://github.com/Timethor/TerraControl.git</connection>
+        <url>http://www.github.org/Timethor/TerraControl/tree/master</url>
     </scm>
 
     <build>
@@ -70,11 +70,11 @@
                         <include>src/**/CustomBiome.*</include>
                         <include>src/**/MapWriter.*</include>
                         <include>src/**/NullBiome.*</include>
-                        <include>src/**/TCBlockPopulator.*</include>
-                        <include>src/**/TCCheckGenerator.*</include>
-                        <include>src/**/TCPlugin.*</include>
-                        <include>src/**/TCWorldChunkManager.*</include>
-                        <include>src/**/TCWorldProvider.*</include>
+                        <include>src/**/TerraBlockPopulator.*</include>
+                        <include>src/**/TerraChunkGenerator.*</include>
+                        <include>src/**/TerraPlugin.*</include>
+                        <include>src/**/TerraWorldChunkManager.*</include>
+                        <include>src/**/TerraWorldProvider.*</include>
                         <include>src/**/BiomeCommand.*</include>
                         <include>src/**/MapCommand.*</include>
                         <include>src/**/ReplaceBiomeCommand.*</include>
@@ -103,6 +103,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>

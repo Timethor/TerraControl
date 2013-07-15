@@ -12,7 +12,7 @@
     <!-- Basic Info -->
     <groupId>com.timethor.minecraft</groupId>
     <artifactId>terracontrol-forge</artifactId>
-    <name>TerrainControl:>Forge</name>
+    <name>TerraControl:>Forge</name>
     <description>${project.artifactId} contains the Forge specific elements of the TerraControl Module Group</description>
     <url>http://www.github.org/Timethor/TerraControl</url>
     

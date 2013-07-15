@@ -11,12 +11,12 @@
     
     <!-- This makes this project an aggregator, run this and it will build all the modules listed below -->
     <packaging>pom</packaging>
-
+        
     <!-- Any Code Modules go here -->
     <modules>
-        <module>core</module>
+        <!--<module>core</module>-->
         <module>platform/bukkit</module>
-        <!--<module>platform/forge</module>-->
+        <module>platform/forge</module>
     </modules>
         
     <scm>
@@ -25,6 +25,29 @@
         <url>http://www.github.org/Timethor/${project.name}/tree/master</url>
     </scm>
 
+        <dependencies>
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-core</artifactId>
+            <version>Core.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>      <!--
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-bukkit</artifactId>
+            <version>Bukkit.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-forge</artifactId>
+            <version>Forge.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+    --></dependencies>
     <build>
         <pluginManagement>
             <plugins>
@@ -39,6 +62,15 @@
                         </goals>
                         <outputDirectory>dist</outputDirectory>
                     </configuration>
+                </plugin>  
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -51,12 +83,12 @@
                                 <goal>shade</goal>
                             </goals>
                             <configuration>
-                                <minimizeJar>true</minimizeJar>
+                                <minimizeJar>false</minimizeJar>
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>
-            </plugins>
+                </plugin>            
+            </plugins> 
         </pluginManagement>
         <resources>
             <resource>
