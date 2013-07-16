@@ -9,50 +9,55 @@ public class MathHelper {
     private static float[] a = new float[65536];
 
     /**
-     *
-     * @param key
+     * Returns the square root of a float
      * <p/>
-     * @return
+     * @param f A float value to have its square root taken
+     * <p/>
+     * @return The square root of a float
      */
-    public static float sqrt(float key) {
-        return (float) Math.sqrt(key);
+    public static float sqrt(float f) {
+        return (float) Math.sqrt(f);
     }
 
     /**
-     *
-     * @param key
+     * Returns the square root of a double
      * <p/>
-     * @return
+     * @param d A double value to have its square root taken
+     * <p/>
+     * @return The square root of a double
      */
-    public static double sqrt(double key) {
-        return Math.sqrt(key);
+    public static double sqrt(double d) {
+        return Math.sqrt(d);
     }
 
     /**
-     *
-     * @param f
+     * Returns the approximated sine of a float
      * <p/>
-     * @return
+     * @param f A float value to get a sine of
+     * <p/>
+     * @return The approximated sine of a float
      */
     public static float sin(float f) {
         return a[((int) (f * 10430.378F) & 0xFFFF)];
     }
 
     /**
-     *
-     * @param f
+     * Returns the approximated cosine of a float
      * <p/>
-     * @return
+     * @param f A float value to get a cosine of
+     * <p/>
+     * @return The approximated cosine of a float
      */
     public static float cos(float f) {
         return a[((int) (f * 10430.378F + 16384.0F) & 0xFFFF)];
     }
 
     /**
-     *
-     * @param d
+     * Returns the mathematical integer floor value of a double
      * <p/>
-     * @return
+     * @param f A double value to get the floor of
+     * <p/>
+     * @return The integer floor of a double
      */
     public static int floor_int(double d) {
         int i = (int) d;
@@ -61,10 +66,11 @@ public class MathHelper {
     }
 
     /**
-     *
-     * @param d
+     * Returns the mathematical long floor value of a double
      * <p/>
-     * @return
+     * @param f A double value to get the floor of
+     * <p/>
+     * @return The long floor of a double
      */
     public static long floor_long(double d) {
         long l = (long) d;
@@ -72,10 +78,11 @@ public class MathHelper {
     }
 
     /**
-     *
-     * @param d
+     * Returns the mathematical double floor value of a double
      * <p/>
-     * @return
+     * @param f A double value to get the floor of
+     * <p/>
+     * @return The double floor of a double
      */
     public static double floor_double(double d) {
 
@@ -83,25 +90,30 @@ public class MathHelper {
     }
 
     /**
-     *
-     * @param a
+     * Returns the absolute value of an integer
      * <p/>
-     * @return
+     * @param a An integer value to get the absolute value of
+     * <p/>
+     * @return The absolute value of an integer
      */
     public static int abs(int a) {
         return (a <= 0) ? -a : a;
     }
 
     /**
-     *
-     * @param a
+     * Returns the absolute value of a double
      * <p/>
-     * @return
+     * @param a A double value to get the absolute value of
+     * <p/>
+     * @return The absolute value of an double
      */
     public static double abs(double a) {
         return (a <= 0.0F) ? 0.0F - a : a;
     }
 
+    /*
+     * Initializes a lookup table for the sin and cos functions above
+     */
     static {
         for (int i = 0; i < 65536; i++) {
             a[i] = (float) Math.sin(i * 3.141592653589793D * 2.0D / 65536.0D);

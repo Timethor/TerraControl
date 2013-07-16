@@ -33,7 +33,7 @@ public class RandomHelper {
      * Gets a Random generator with a random seed. However, the same input
      * will always produce the same output.
      * <p/>
-     * @param i2d 
+     * @param i2d
      * @param seed Seed to start with.
      * <p/>
      * @return A random generator with a random seed.
@@ -68,7 +68,7 @@ public class RandomHelper {
      * Gets a Random generator with a random seed. However, the same input
      * will always produce the same output.
      * <p/>
-     * @param i3d 
+     * @param i3d
      * @param seed Seed to start with.
      * <p/>
      * @return A random generator with a random seed.
