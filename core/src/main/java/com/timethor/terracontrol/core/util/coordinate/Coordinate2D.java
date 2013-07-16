@@ -80,7 +80,7 @@ public class Coordinate2D {
     }
 
     /**
-     * Returns the vector magnitude of the 3D point
+     * Returns the vector magnitude of the 3D point squared
      * <p/>
      * @return The Vector magnitude of the 3D point squared
      */
@@ -92,8 +92,9 @@ public class Coordinate2D {
      * Returns a new 2D Coordinate from the component-wise addition of two
      * or more 2D coordinates
      * <p/>
-     * @param a          The base coordinate for addition
-     * @param b          The second coordinate for addition
+     * @param a The base coordinate for addition
+     * @param b The second coordinate for addition
+     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate2D add(Coordinate2D a, Coordinate2D... b) {
@@ -108,8 +109,9 @@ public class Coordinate2D {
      * Returns a new 2D Coordinate from the component-wise subtraction of
      * one or more 2D coordinates from a 2D coordinate
      * <p/>
-     * @param a          The base coordinate for subtraction
-     * @param b          The second coordinate for subtraction
+     * @param a The base coordinate for subtraction
+     * @param b The second coordinate for subtraction
+     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate2D sub(Coordinate2D a, Coordinate2D... b) {
@@ -124,8 +126,9 @@ public class Coordinate2D {
      * Returns a new 2D Coordinate from the linear shifting (addition) of a
      * single 2D coordinate by one or more integer values
      * <p/>
-     * @param a          The base coordinate for shifting
-     * @param b          A value to shift by
+     * @param a The base coordinate for shifting
+     * @param b A value to shift by
+     * <p/>
      * @return The addend of a, b, ...
      */
     public static Coordinate2D shift(Coordinate2D a, int... b) {
@@ -140,8 +143,9 @@ public class Coordinate2D {
      * Returns a new 2D Coordinate from the component-wise multiplication
      * of one or more 2D coordinates from a 3D coordinate
      * <p/>
-     * @param a          The base coordinate for multiplication
-     * @param b          The second coordinate for multiplication
+     * @param a The base coordinate for multiplication
+     * @param b The second coordinate for multiplication
+     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate2D mult(Coordinate2D a, Coordinate2D... b) {
@@ -156,8 +160,9 @@ public class Coordinate2D {
      * Returns a new 2D Coordinate from the linear multiplication of a
      * single 2D coordinate by one or more integer values
      * <p/>
-     * @param a          The base coordinate for multiplication
-     * @param b          A value to multiply by
+     * @param a The base coordinate for multiplication
+     * @param b A value to multiply by
+     * <p/>
      * @return The addend of a, b, ...
      */
     public static Coordinate2D mult(Coordinate2D a, int... b) {
@@ -198,8 +203,9 @@ public class Coordinate2D {
      * Returns a new 2D Coordinate from the component-wise division of a 2D
      * coordinate by one or more other 2D coordinates
      * <p/>
-     * @param a          The base coordinate for division
-     * @param b          The second coordinate for division
+     * @param a The base coordinate for division
+     * @param b The second coordinate for division
+     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate2D div(Coordinate2D a, Coordinate2D... b) {
@@ -214,8 +220,9 @@ public class Coordinate2D {
      * Returns a new 2D Coordinate from the linear division of a single 2D
      * coordinate by one or more integer values
      * <p/>
-     * @param a          The base coordinate for division
-     * @param b          A value to divide by
+     * @param a The base coordinate for division
+     * @param b A value to divide by
+     * <p/>
      * @return The addend of a, b, ...
      */
     public static Coordinate2D div(Coordinate2D a, int... b) {
@@ -233,8 +240,9 @@ public class Coordinate2D {
      * giving a 2D coordinate comprising the highest value components found
      * from g
      * <p/>
-     * @param a          The base coordinate
-     * @param b          A coordinate to pull maximums from
+     * @param a The base coordinate
+     * @param b A coordinate to pull maximums from
+     * <p/>
      * @return The component-wise maximum of two or more 2D coordinates
      */
     public static Coordinate2D componentMax(Coordinate2D a, Coordinate2D... b) {
@@ -252,8 +260,9 @@ public class Coordinate2D {
      * giving a 2D coordinate comprising the lowest value components found
      * from g
      * <p/>
-     * @param a          The base coordinate
-     * @param b          A coordinate to pull minimums from
+     * @param a The base coordinate
+     * @param b A coordinate to pull minimums from
+     * <p/>
      * @return The component-wise minimum of two or more 2D coordinates
      */
     public static Coordinate2D componentMin(Coordinate2D a, Coordinate2D... b) {
@@ -270,8 +279,9 @@ public class Coordinate2D {
      * will be calculated for all g and the coordinate with the highest
      * magnitude will be returned
      * <p/>
-     * @param a          The base coordinate
-     * @param b          A coordinate to test against the base
+     * @param a The base coordinate
+     * @param b A coordinate to test against the base
+     * <p/>
      * @return The magnitude-based minimum of two or more 2D coordinates
      */
     public static Coordinate2D min(Coordinate2D a, Coordinate2D... b) {
@@ -287,8 +297,9 @@ public class Coordinate2D {
      * will be calculated for all g and the coordinate with the highest
      * magnitude will be returned
      * <p/>
-     * @param a          The base coordinate
-     * @param b          A coordinate to test against the base
+     * @param a The base coordinate
+     * @param b A coordinate to test against the base
+     * <p/>
      * @return The magnitude-based maximum of two or more 2D coordinates
      */
     public static Coordinate2D max(Coordinate2D a, Coordinate2D... b) {
@@ -360,7 +371,7 @@ public class Coordinate2D {
      * <p/>
      * @param a      The first point for interpolation
      * @param b      The second point for interpolation
-     * @param c 
+     * @param c
      * @param blendx A blending factor
      * @param blendy A blending factor
      * <p/>
@@ -428,7 +439,7 @@ public class Coordinate2D {
     /**
      * Sets the X component of this coordinate
      * <p/>
-     * @param x 
+     * @param x
      * @param x The new X component of this coordinate
      */
     public void setX(int x) {
@@ -438,7 +449,7 @@ public class Coordinate2D {
     /**
      * Sets the Z component of this coordinate
      * <p/>
-     * @param z 
+     * @param z
      * @param z The new Z component of this coordinate
      */
     public void setZ(int z) {
