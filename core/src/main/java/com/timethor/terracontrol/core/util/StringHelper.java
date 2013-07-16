@@ -14,20 +14,28 @@ import java.util.List;
 public abstract class StringHelper {
 
     /**
-     *
-     * @param coll
-     * @param glue
-     * @return
+     * Returns a string from elements of a collection that have been joined
+     * with the provided string `glue`
+     * <p/>
+     * @param coll The collection containing data to be joined
+     * @param glue The string to join the collection with
+     * <p/>
+     * @return A string containing elements of a collection with a given
+     *         string glue
      */
     public static String join(final Collection<?> coll, final String glue) {
         return join(coll.toArray(new Object[coll.size()]), glue);
     }
 
     /**
-     *
-     * @param list
-     * @param glue
-     * @return
+     * Returns a string from elements of an object array that have been
+     * joined with the provided string `glue`
+     * <p/>
+     * @param list The Object array containing data to be joined
+     * @param glue The string to join the Object array with
+     * <p/>
+     * @return A string containing elements of an object array with a given
+     *         string glue
      */
     public static String join(final Object[] list, final String glue) {
         StringBuilder ret = new StringBuilder();
