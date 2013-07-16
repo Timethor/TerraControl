@@ -14,9 +14,10 @@
         
     <!-- Any Code Modules go here -->
     <modules>
-        <!--<module>core</module>-->
+        <module>core</module>
         <module>platform/bukkit</module>
         <module>platform/forge</module>
+        <module>platform</module>
     </modules>
         
     <scm>
@@ -25,29 +26,6 @@
         <url>http://www.github.org/Timethor/${project.name}/tree/master</url>
     </scm>
 
-        <dependencies>
-        <dependency>
-            <groupId>com.timethor.minecraft</groupId>
-            <artifactId>terracontrol-core</artifactId>
-            <version>Core.0.0.1-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>      <!--
-        <dependency>
-            <groupId>com.timethor.minecraft</groupId>
-            <artifactId>terracontrol-bukkit</artifactId>
-            <version>Bukkit.0.0.1-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.timethor.minecraft</groupId>
-            <artifactId>terracontrol-forge</artifactId>
-            <version>Forge.0.0.1-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-    --></dependencies>
     <build>
         <pluginManagement>
             <plugins>

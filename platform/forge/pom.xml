@@ -30,9 +30,9 @@
     </properties>
     
     <scm>
-        <developerConnection>scm:git:git@github.com:Timethor/TerrainControl-Plus.git</developerConnection>
-        <connection>scm:git:git://github.com/Timethor/TerrainControl-Plus.git</connection>
-        <url>http://www.github.org/Timethor/TerrainControl-Plus/tree/master</url>
+        <developerConnection>scm:git:git@github.com:Timethor/TerraControl.git</developerConnection>
+        <connection>scm:git:git://github.com/Timethor/TerraControl.git</connection>
+        <url>http://www.github.org/Timethor/TerraControl/tree/master</url>
     </scm>
     
     <build>
@@ -66,6 +66,13 @@
             <type>pom</type>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-core</artifactId>
+            <version>Core.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency> 
     </dependencies>
     
     <repositories>

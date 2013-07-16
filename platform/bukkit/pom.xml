@@ -125,6 +125,13 @@
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-core</artifactId>
+            <version>Core.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>     
     </dependencies>
 
     <repositories>

@@ -1,12 +1,12 @@
-name: TerrainControl-Plus
-version: 2.4.12
+name: TerraControl
+version: 0.0.1
 description: Advanced custom world generator. Based on Khorn's TerrainControl, which is based on R-T-B's PhoenixTerrainMod, which itself is based on Bucyruss' BiomeTerrainMod.
 authors: ['Timethor']
-main: com.timethor.terraincontrol.platform.bukkit.TC_Plugin
+main: com.timethor.terracontrol.bukkit.TerraPlugin
 load: startup
 commands:
-    tcp:
-        description: TerrainControl commands
+    terra:
+        description: TerraControl commands
         usage: |
               /<command> <check> [world] - Checks TC is enable for this world.
               /<command> <reload> [world] - Reload config
@@ -14,40 +14,40 @@ commands:
               /<command> <list> - Show list of loaded BOB's 
               /<command> <map> - Generate a biome map image
               /<command> <spawn> [BobName] - Spawn a BOB with BobName at your cursor
-        aliases: [terraincontrolplus]
+        aliases: [terracontrol]
 permissions:
-    tcp.*:
+    terra.*:
         default: false
         children:
             tc.cmd.*: true
-    tcp.cmd.*:
+    terra.cmd.*:
         default: false
         children:
-            tcp.cmd.biome: true
-            tcp.cmd.check: true
-            tcp.cmd.help: true
-            tcp.cmd.list: true
-            tcp.cmd.map: true
-            tcp.cmd.reload: true
-            tcp.cmd.spawn: true
-    tcp.cmd.biome:
+            terra.cmd.biome: true
+            terra.cmd.check: true
+            terra.cmd.help: true
+            terra.cmd.list: true
+            terra.cmd.map: true
+            terra.cmd.reload: true
+            terra.cmd.spawn: true
+    terra.cmd.biome:
         default: op
         description: show chunk biome and block stats
-    tcp.cmd.check:
+    terra.cmd.check:
         default: op
         description: check/create TC settings for world
-    tcp.cmd.help:
+    terra.cmd.help:
         default: op
         description: show help
-    tcp.cmd.list:
+    terra.cmd.list:
         default: op
         description: list bo2 objects
-    tcp.cmd.map:
+    terra.cmd.map:
         default: op
         description: generate biome map image
-    tcp.cmd.reload:
+    terra.cmd.reload:
         default: op
         description: reload world settings
-    tcp.cmd.spawn:
+    terra.cmd.spawn:
         default: op
         description: spawn bo2 where you look
