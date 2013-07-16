@@ -2,6 +2,9 @@ package com.timethor.terracontrol.core.util;
 
 import com.timethor.terracontrol.core.builtin.MaterialCatalog;
 
+/**
+ * Methods for helping with block rotation
+ */
 public class BlockHelper {
 
     /**

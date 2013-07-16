@@ -1,45 +1,103 @@
 package com.timethor.terracontrol.core.util;
 
+/**
+ * Some methods for faster trig and other math as well as some ease of use
+ * methods
+ */
 public class MathHelper {
 
     private static float[] a = new float[65536];
 
+    /**
+     *
+     * @param key
+     * <p/>
+     * @return
+     */
     public static float sqrt(float key) {
         return (float) Math.sqrt(key);
     }
 
+    /**
+     *
+     * @param key
+     * <p/>
+     * @return
+     */
     public static double sqrt(double key) {
         return Math.sqrt(key);
     }
 
+    /**
+     *
+     * @param f
+     * <p/>
+     * @return
+     */
     public static float sin(float f) {
         return a[((int) (f * 10430.378F) & 0xFFFF)];
     }
 
+    /**
+     *
+     * @param f
+     * <p/>
+     * @return
+     */
     public static float cos(float f) {
         return a[((int) (f * 10430.378F + 16384.0F) & 0xFFFF)];
     }
 
+    /**
+     *
+     * @param d
+     * <p/>
+     * @return
+     */
     public static int floor_int(double d) {
         int i = (int) d;
 
         return d < (double) i ? i - 1 : i;
     }
 
+    /**
+     *
+     * @param d
+     * <p/>
+     * @return
+     */
     public static long floor_long(double d) {
         long l = (long) d;
         return d >= (double) l ? l : l - 1L;
     }
 
+    /**
+     *
+     * @param d
+     * <p/>
+     * @return
+     */
     public static double floor_double(double d) {
 
         return (double) floor_long(d);
     }
 
+    /**
+     *
+     * @param a
+     * <p/>
+     * @return
+     */
     public static int abs(int a) {
         return (a <= 0) ? -a : a;
     }
 
+    /**
+     *
+     * @param a
+     * <p/>
+     * @return
+     */
     public static double abs(double a) {
         return (a <= 0.0F) ? 0.0F - a : a;
     }

@@ -13,10 +13,22 @@ import java.util.List;
  */
 public abstract class StringHelper {
 
+    /**
+     *
+     * @param coll
+     * @param glue
+     * @return
+     */
     public static String join(final Collection<?> coll, final String glue) {
         return join(coll.toArray(new Object[coll.size()]), glue);
     }
 
+    /**
+     *
+     * @param list
+     * @param glue
+     * @return
+     */
     public static String join(final Object[] list, final String glue) {
         StringBuilder ret = new StringBuilder();
         for (int i = 0; i < list.length; i++) {
