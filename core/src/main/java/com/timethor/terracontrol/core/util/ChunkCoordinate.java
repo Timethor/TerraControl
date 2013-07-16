@@ -91,7 +91,9 @@ public class ChunkCoordinate extends Coordinate2D {
     /**
      * Returns a new ChunkCoordinate matching the 2D coordinate given
      * <p/>
-     * @param chunk 
+     * @param chunk The 2D coordinate from which a ChunkCoordinate should
+     *              be derived
+     * <p/>
      * @return A new ChunkCoordinate matching the 2D coordinate given
      */
     public static ChunkCoordinate fromChunkCoords(Coordinate2D chunk) {
