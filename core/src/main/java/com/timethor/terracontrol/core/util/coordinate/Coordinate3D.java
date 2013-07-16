@@ -143,8 +143,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for addition
      * @param b          The second coordinate for addition
-     * @param ... Additional coordinates for addition
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D add(Coordinate3D a, Coordinate2D... b) {
@@ -161,8 +159,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for addition
      * @param b          The second coordinate for addition
-     * @param ... Additional coordinates for addition
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D add(Coordinate3D a, Coordinate3D... b) {
@@ -183,8 +179,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for subtraction
      * @param b          The second coordinate for subtraction
-     * @param ... Additional coordinates for subtraction
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D sub(Coordinate3D a, Coordinate2D... b) {
@@ -201,8 +195,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for subtraction
      * @param b          The second coordinate for subtraction
-     * @param ... Additional coordinates for subtraction
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D sub(Coordinate3D a, Coordinate3D... b) {
@@ -223,8 +215,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for shifting
      * @param b          A value to shift by
-     * @param ... Additional values to shift by
-     * <p/>
      * @return The addend of a, b, ...
      */
     public static Coordinate3D shift(Coordinate3D a, int... b) {
@@ -241,8 +231,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for multiplication
      * @param b          The second coordinate for multiplication
-     * @param ... Additional coordinates for multiplication
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D mult(Coordinate3D a, Coordinate2D... b) {
@@ -259,8 +247,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for multiplication
      * @param b          The second coordinate for multiplication
-     * @param ... Additional coordinates for multiplication
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D mult(Coordinate3D a, Coordinate3D... b) {
@@ -278,8 +264,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for multiplication
      * @param b          A value to multiply by
-     * @param ... Additional values to multiply by
-     * <p/>
      * @return The addend of a, b, ...
      */
     public static Coordinate3D mult(Coordinate3D a, int... b) {
@@ -325,8 +309,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for division
      * @param b          The second coordinate for division
-     * @param ... Additional coordinates for division
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D div(Coordinate3D a, Coordinate2D... b) {
@@ -343,8 +325,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for division
      * @param b          The second coordinate for division
-     * @param ... Additional coordinates for division
-     * <p/>
      * @return The component-wise addend of a, b, ...
      */
     public static Coordinate3D div(Coordinate3D a, Coordinate3D... b) {
@@ -362,8 +342,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate for division
      * @param b          A value to divide by
-     * @param ... Additional values to divide by
-     * <p/>
      * @return The addend of a, b, ...
      */
     public static Coordinate3D div(Coordinate3D a, int... b) {
@@ -383,8 +361,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate
      * @param b          A coordinate to pull maximums from
-     * @param ... Additional coordinates to pull maximums from
-     * <p/>
      * @return The component-wise maximum of two or more 3D coordinates
      */
     public static Coordinate3D componentMax(Coordinate3D a, Coordinate3D... b) {
@@ -404,8 +380,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate
      * @param b          A coordinate to pull minimums from
-     * @param ... Additional coordinates to pull minimums from
-     * <p/>
      * @return The component-wise minimum of two or more 3D coordinates
      */
     public static Coordinate3D componentMin(Coordinate3D a, Coordinate3D... b) {
@@ -424,8 +398,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate
      * @param b          A coordinate to test against the base
-     * @param ... Additional coordinates to test against the base
-     * <p/>
      * @return The magnitude-based minimum of two or more 3D coordinates
      */
     public static Coordinate3D min(Coordinate3D a, Coordinate3D... b) {
@@ -443,8 +415,6 @@ public class Coordinate3D extends Coordinate2D {
      * <p/>
      * @param a          The base coordinate
      * @param b          A coordinate to test against the base
-     * @param ... Additional coordinates to test against the base
-     * <p/>
      * @return The magnitude-based maximum of two or more 3D coordinates
      */
     public static Coordinate3D max(Coordinate3D a, Coordinate3D... b) {
@@ -515,7 +485,7 @@ public class Coordinate3D extends Coordinate2D {
      * points and two blend factors
      * <p/>
      * @param a      The first point for interpolation
-     * @param b      The second point for interpolation
+     * @param c 
      * @param b      The second point for interpolation
      * @param blendx A blending factor
      * @param blendy A blending factor

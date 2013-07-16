@@ -1,22 +1,22 @@
-/*
- * Copyright (C) 2013 Timethor
- *
- * This program is NOT free software; you can NOT redistribute it and/or
- * modify it without explicit permission from the owner of the codebase.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- */
 package com.timethor.terracontrol.core.util.dataGroups;
 
 /**
+ * @param <F>
+ * @param <S>
+ * @param <T>
+ * <p/>
  * @author Timethor
  */
 public class Entry3<F, S, T> extends Entry2<F, S> implements Triple<F, S, T> {
 
     T third;
 
+    /**
+     *
+     * @param third
+     * @param first
+     * @param second
+     */
     public Entry3(T third, F first, S second) {
         super(first, second);
         this.third = third;

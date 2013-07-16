@@ -2,54 +2,111 @@ package com.timethor.terracontrol.core.util.vector;
 
 import com.timethor.terracontrol.core.util.MathHelper;
 
+/**
+ *
+ * @author Timethor
+ */
 public class Vector4D extends Vector3D {
 
+    /**
+     *
+     */
     protected double w;
 
+    /**
+     *
+     */
     public Vector4D() {
     }
 
+    /**
+     *
+     * @param x
+     * @param y
+     */
     public Vector4D(double x, double y) {
         super(x, y);
         this.w = 0;
     }
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param z
+     */
     public Vector4D(double x, double y, double z) {
         super(x, y, z);
         this.w = 0;
     }
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @param z
+     * @param w
+     */
     public Vector4D(double x, double y, double z, double w) {
         super(x, y, z);
         this.w = w;
     }
 
+    /**
+     *
+     * @param other
+     * @param z
+     * @param w
+     */
     public Vector4D(Vector2D other, double z, double w) {
         super(other, z);
         this.w = w;
     }
 
+    /**
+     *
+     * @param other
+     * @param w
+     */
     public Vector4D(Vector3D other, double w) {
         super(other);
         this.w = w;
     }
 
+    /**
+     *
+     * @param other
+     */
     public Vector4D(Vector4D other) {
         super(other);
         this.w = other.w;
     }
 
     //>>	END CONSTRUCTORS
+    /**
+     *
+     * @return
+     */
     @Override
     public double magnitude() {
         return Math.sqrt(magnitudeSqared());
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double magnitudeSqared() {
         return super.magnitudeSqared() + w * w;
     }
 
+    /**
+     *
+     * @param <T>
+     * @param a
+     * @return
+     */
     public static <T extends Vector2D> T getGenericVector(T a) {
         if (a instanceof Vector4D) {
             return (T) new Vector4D();
@@ -58,6 +115,12 @@ public class Vector4D extends Vector3D {
         }
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D add(Vector4D a, Vector2D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -68,6 +131,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, a.z, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D add(Vector4D a, Vector3D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -80,6 +149,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D add(Vector4D a, Vector4D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -94,6 +169,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, w0);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D sub(Vector4D a, Vector2D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -104,6 +185,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, a.z, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D sub(Vector4D a, Vector3D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -116,6 +203,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D sub(Vector4D a, Vector4D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -130,6 +223,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, w0);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D shift(Vector4D a, double... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -138,6 +237,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D shfit(Vector4D a, float... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -146,6 +251,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D shift(Vector4D a, long... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -154,6 +265,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D shift(Vector4D a, int... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -162,6 +279,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x + b1, a.y + b1, a.z + b1, a.w + b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D mult(Vector4D a, Vector2D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -172,6 +295,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, a.z, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D mult(Vector4D a, Vector3D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -184,6 +313,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D mult(Vector4D a, Vector4D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -198,6 +333,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, w0);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D mult(Vector4D a, double... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -206,6 +347,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D mult(Vector4D a, float... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -214,6 +361,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D mult(Vector4D a, long... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -222,6 +375,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D mult(Vector4D a, int... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -230,10 +389,23 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x * b1, a.y * b1, a.z * b1, a.w * b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static double dot(Vector4D a, Vector4D b) {
         return Vector3D.dot(a, b) + a.w * b.w;
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
     public static Vector4D cross(Vector4D a, Vector4D b, Vector4D c) {
         return new Vector4D(
             MathHelper.abs(a.x * (b.z * c.w - c.z * b.w) - a.z * (b.y * c.w - c.y * b.w) + a.w * (b.y * c.z - c.y * b.z)),
@@ -242,6 +414,12 @@ public class Vector4D extends Vector3D {
             MathHelper.abs(-a.x * (b.y * c.z - c.y * b.z) + a.y * (b.x * c.z - c.x * b.z) - a.z * (b.x * c.y - c.x * b.y)));
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D div(Vector4D a, Vector2D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -252,6 +430,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, a.z, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D div(Vector4D a, Vector3D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -264,6 +448,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, a.w);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D div(Vector4D a, Vector4D... b) {
         double x0 = a.x;
         double y0 = a.y;
@@ -278,6 +468,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(x0, y0, z0, w0);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D div(Vector4D a, double... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -286,6 +482,12 @@ public class Vector4D extends Vector3D {
         return new Vector4D(a.x / b1, a.y / b1, a.z / b1, a.w / b1);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static Vector4D div(Vector4D a, float... b) {
         double b1 = 0;
         for (double b0 : b) {
@@ -313,6 +515,10 @@ public class Vector4D extends Vector3D {
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getW() {
         return w;
     }

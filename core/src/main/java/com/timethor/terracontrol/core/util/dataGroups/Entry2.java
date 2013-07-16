@@ -1,16 +1,8 @@
-/*
- * Copyright (C) 2013 Timethor
- *
- * This program is NOT free software; you can NOT redistribute it and/or
- * modify it without explicit permission from the owner of the codebase.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- */
 package com.timethor.terracontrol.core.util.dataGroups;
 
 /**
+ * @param <F> 
+ * @param <S> 
  * @author Timethor
  */
 public class Entry2<F, S> implements Pair<F, S> {
@@ -18,9 +10,15 @@ public class Entry2<F, S> implements Pair<F, S> {
     F first;
     S second;
 
+    /**
+     *
+     * @param first
+     * @param second
+     */
     public Entry2(F first, S second) {
         this.first = first;
         this.second = second;
+        super.hashCode();
     }
 
     @Override
