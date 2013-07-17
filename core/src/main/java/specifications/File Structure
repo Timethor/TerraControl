@@ -1,5 +1,14 @@
-
 Path                                                    Biome Turns Into            
+
+
+=====================================================================
+Standardized File Extensions: (tc = TerraConfig which matches the interpreter class)
+Plugin: .plugin.tc
+World : .world.tc
+Biome : .biome.tc
+BOB   : .bom.tc
+=====================================================================
+
 
 Plugin.tcpconf
 GlobalObjects
