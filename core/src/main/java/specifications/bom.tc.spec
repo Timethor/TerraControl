@@ -87,6 +87,9 @@ Spawn: {
         Object:{
             CheckBlockAt:{                                                      @Spawn_Check_Block_At_Location
                 <x,y,z>{@Block_Group}([Include, Exclude]),
+                @Block_Group:{
+                    <x,y,z>,<x,y,z>,<x,y,z>,([Include, Exclude])
+                }
                 ...
                 <source>{@Block_Group}([Include, Exclude]),
                 <child>{@Block_Group}([Include, Exclude]),

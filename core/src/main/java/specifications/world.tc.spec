@@ -20,7 +20,6 @@ Biomes: {
     Ice: {}
     Isle: {}
     Border: {}
-    oldSize:1.5
 }
 
 Environment:{
