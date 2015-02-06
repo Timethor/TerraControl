@@ -18,7 +18,7 @@
     <url>http://www.github.org/Timethor/TerraControl</url>
     
     <!-- Current Version of Forge side of the code -->
-    <version>Release-0.0.1-SNAPSHOT</version>
+    <version>Release.0.0.1-SNAPSHOT</version>
     <!-- This tells Maven to make us a *.jar file -->
     <packaging>jar</packaging>
     
@@ -37,10 +37,11 @@
     </scm>
     
     <build>
-        <directory>build</directory>
-        <outputDirectory>build/classes</outputDirectory>
-        <finalName>TerraControl</finalName>
-        <testOutputDirectory>build/test-classes</testOutputDirectory>
+        <defaultGoal>clean install</defaultGoal>
+        <directory>target/build</directory>
+        <outputDirectory>target/build/classes</outputDirectory>
+        <finalName>TerraControl_${project.version}</finalName>
+        <testOutputDirectory>target/build/test-classes</testOutputDirectory>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -60,6 +61,13 @@
     </build>
     
     <dependencies>
+        <dependency>
+            <groupId>com.timethor.minecraft</groupId>
+            <artifactId>terracontrol-core</artifactId>
+            <version>Core.0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>com.timethor.minecraft</groupId>
             <artifactId>terracontrol-bukkit</artifactId>

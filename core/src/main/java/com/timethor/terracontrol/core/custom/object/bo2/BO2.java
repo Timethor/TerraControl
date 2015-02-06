@@ -12,6 +12,7 @@ import com.timethor.terracontrol.core.custom.object.Rotation;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 
 /**
  * The good old BO2.
@@ -19,98 +20,108 @@ import java.util.*;
 public final class BO2 extends ConfigFile implements CustomObject {
 
     /**
-	 */
+     */
     public ObjectCoordinate[][] data = new ObjectCoordinate[4][];
     /**
-	 */
+     */
     public BO2[] groupObjects = null;
     /**
-	 */
+     */
     public HashSet<String> spawnInBiome;
     /**
-	 */
+     */
     public String version;
     /**
-	 */
+     */
     public HashSet<Integer> spawnOnBlockType;
     /**
-	 */
+     */
     public HashSet<Integer> collisionBlockType;
     /**
-	 */
+     */
     public boolean spawnWater;
     /**
-	 */
+     */
     public boolean spawnLava;
     /**
-	 */
+     */
     public boolean spawnAboveGround;
     /**
-	 */
+     */
     public boolean spawnUnderGround;
     /**
-	 */
+     */
     public boolean spawnSunlight;
     /**
-	 */
+     */
     public boolean spawnDarkness;
     /**
-	 */
+     */
     public boolean underFill;
     /**
-	 */
+     */
     public boolean randomRotation;
     /**
-	 */
+     */
     public boolean dig;
     /**
-	 */
+     */
     public boolean tree;
     /**
-	 */
+     */
     public boolean branch;
     /**
-	 */
+     */
     public boolean diggingBranch;
     /**
-	 */
+     */
     public boolean needsFoundation;
     /**
-	 */
+     */
     public int rarity;
     /**
-	 */
+     */
     public double collisionPercentage;
     /**
-	 */
+     */
     public int spawnElevationMin;
     /**
-	 */
+     */
     public int spawnElevationMax;
     /**
-	 */
+     */
     public int groupFrequencyMin;
     /**
-	 */
+     */
     public int groupFrequencyMax;
     /**
-	 */
+     */
     public int groupSeparationMin;
     /**
-	 */
+     */
     public int groupSeparationMax;
     /**
-	 */
+     */
     public String groupId;
     /**
-	 */
+     */
     public int branchLimit;
 
+    /**
+     *
+     * @param file
+     * @param name
+     */
     public BO2(File file, String name) {
         readSettingsFile(file);
         this.name = name;
     }
 
+    /**
+     *
+     * @param settings
+     * @param name
+     */
     public BO2(Map<String, String> settings, String name) {
         settingsCache = settings;
         this.name = name;
@@ -228,6 +239,15 @@ public final class BO2 extends ConfigFile implements CustomObject {
         return true;
     }
 
+    /**
+     *
+     * @param world
+     * @param random
+     * @param x
+     * @param z
+     *               <p/>
+     * @return
+     */
     protected boolean spawn(TerraWorld world, Random random, int x, int z) {
         int y;
         if (spawnAboveGround) {
@@ -299,11 +319,18 @@ public final class BO2 extends ConfigFile implements CustomObject {
         return new BO2(newSettings, getName());
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Override
     protected void writeConfigSettings() throws IOException {
         // It doesn't write.
     }
 
+    /**
+     *
+     */
     @Override
     protected void readConfigSettings() {
         this.version = readModSettings(BODefaultValues.version.name(), BODefaultValues.version.stringValue());
@@ -344,11 +371,17 @@ public final class BO2 extends ConfigFile implements CustomObject {
         this.ReadCoordinates();
     }
 
+    /**
+     *
+     */
     @Override
     protected void correctSettings() {
         // Stub method
     }
 
+    /**
+     *
+     */
     @Override
     protected void renameOldSettings() {
         // Stub method
@@ -423,7 +456,7 @@ public final class BO2 extends ConfigFile implements CustomObject {
             }
         }
         if (nonIntegerValues) {
-            TerraControl.log("Custom object " + this.name + " has wrong value " + settingName);
+            TerraControl.log(Level.WARNING, "Custom object " + this.name + " has wrong value " + settingName);
         }
 
         return output;
@@ -431,52 +464,58 @@ public final class BO2 extends ConfigFile implements CustomObject {
     }
 
     // Old branch code - is being rewritten
-/*    public void GenerateCustomObjectFromGroup(TerraWorld world, Random random, int x, int y, int z)
-     {
-     if (GroupObjects == null)
-     return;
-
-     int attempts = 3;
-     if ((GroupFrequencyMax - GroupFrequencyMin) > 0)
-     attempts = GroupFrequencyMin + random.nextInt(GroupFrequencyMax - GroupFrequencyMin);
-
-     while (attempts > 0)
-     {
-     attempts--;
-
-     int objIndex = random.nextInt(GroupObjects.length);
-     BO2 ObjectFromGroup = GroupObjects[objIndex];
-
-     if (Branch)
-     continue;
-
-     x = x + random.nextInt(GroupSeparationMax - GroupSeparationMin) + GroupSeparationMin;
-     z = z + random.nextInt(GroupSeparationMax - GroupSeparationMin) + GroupSeparationMin;
-     int _y;
-
-     if (SpawnAboveGround)
-     _y = world.getSolidHeight(x, z);
-     else if (SpawnUnderGround)
-     {
-     int solidHeight = world.getSolidHeight(x, z);
-     if (solidHeight < 1 || solidHeight <= SpawnElevationMin)
-     continue;
-     if (solidHeight > SpawnElevationMax)
-     solidHeight = SpawnElevationMax;
-     _y = random.nextInt(solidHeight - SpawnElevationMin) + SpawnElevationMin;
-     } else
-     _y = world.getHighestBlockYAt(x, z);
-
-     if (y < 0)
-     continue;
-
-     if ((y - _y) > 10 || (_y - y) > 10)
-     continue;
-
-     ObjectFromGroup.spawn(world, random, x, _y, z);
-     }
-
-     }*/
+/* public
+     * void GenerateCustomObjectFromGroup(TerraWorld world, Random random,
+     * int x, int y, int z)
+     * {
+     * if (GroupObjects == null)
+     * return;
+     *
+     * int attempts = 3;
+     * if ((GroupFrequencyMax - GroupFrequencyMin) > 0)
+     * attempts = GroupFrequencyMin + random.nextInt(GroupFrequencyMax -
+     * GroupFrequencyMin);
+     *
+     * while (attempts > 0)
+     * {
+     * attempts--;
+     *
+     * int objIndex = random.nextInt(GroupObjects.length);
+     * BO2 ObjectFromGroup = GroupObjects[objIndex];
+     *
+     * if (Branch)
+     * continue;
+     *
+     * x = x + random.nextInt(GroupSeparationMax - GroupSeparationMin) +
+     * GroupSeparationMin;
+     * z = z + random.nextInt(GroupSeparationMax - GroupSeparationMin) +
+     * GroupSeparationMin;
+     * int _y;
+     *
+     * if (SpawnAboveGround)
+     * _y = world.getSolidHeight(x, z);
+     * else if (SpawnUnderGround)
+     * {
+     * int solidHeight = world.getSolidHeight(x, z);
+     * if (solidHeight < 1 || solidHeight <= SpawnElevationMin)
+     * continue;
+     * if (solidHeight > SpawnElevationMax)
+     * solidHeight = SpawnElevationMax;
+     * _y = random.nextInt(solidHeight - SpawnElevationMin) +
+     * SpawnElevationMin;
+     * } else
+     * _y = world.getHighestBlockYAt(x, z);
+     *
+     * if (y < 0)
+     * continue;
+     *
+     * if ((y - _y) > 10 || (_y - y) > 10)
+     * continue;
+     *
+     * ObjectFromGroup.spawn(world, random, x, _y, z);
+     * }
+     *
+     * } */
     @Override
     public boolean hasPreferenceToSpawnIn(TerraBiome biome) {
         return spawnInBiome.contains(biome.getName()) || spawnInBiome.contains("All");

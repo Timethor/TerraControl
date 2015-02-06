@@ -85,6 +85,7 @@ public class BO3Config extends ConfigFile {
      *
      * @param name
      * @param file
+     * @param otherObjectsInDirectory
      */
     public BO3Config(String name, File file, Map<String, CustomObject> otherObjectsInDirectory) {
         this.file = file;
@@ -101,9 +102,8 @@ public class BO3Config extends ConfigFile {
      * settings in the
      * settings file.
      *
-     * @param name
-     * @param file
-     * @param settings
+     * @param oldObject
+     * @param extraSettings
      */
     public BO3Config(BO3 oldObject, Map<String, String> extraSettings) {
         this.file = oldObject.getSettings().file;
@@ -128,15 +128,27 @@ public class BO3Config extends ConfigFile {
         rotateBlocksAndChecks();
     }
 
+    /**
+     *
+     * @param file
+     */
     @Override
     public void logFileNotFound(File file) {
         // Ignore
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<String, String> getSettingsCache() {
         return settingsCache;
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @Override
     protected void writeConfigSettings() throws IOException {
         // The object
@@ -204,6 +216,9 @@ public class BO3Config extends ConfigFile {
         writeResources();
     }
 
+    /**
+     *
+     */
     @Override
     protected void readConfigSettings() {
         author = readSettings(BO3Settings.author);
@@ -261,6 +276,10 @@ public class BO3Config extends ConfigFile {
         branches[0] = tempBranchesList.toArray(new BranchFunction[tempBranchesList.size()]);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     public void writeResources() throws IOException {
         // Blocks
         writeBigTitle("Blocks");
@@ -297,6 +316,9 @@ public class BO3Config extends ConfigFile {
 
     }
 
+    /**
+     *
+     */
     @Override
     protected void correctSettings() {
         frequency = applyBounds(frequency, 1, 200);
@@ -308,6 +330,9 @@ public class BO3Config extends ConfigFile {
         maxPercentageOutsideSourceBlock = applyBounds(maxPercentageOutsideSourceBlock, 0, 100);
     }
 
+    /**
+     *
+     */
     @Override
     protected void renameOldSettings() {
         // Stub method - there are no old setting to convert yet (:

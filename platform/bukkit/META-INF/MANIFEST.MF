@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: terracontrol-bukkit
+Bundle-SymbolicName: terracontrol-bukkit
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.timethor.terracontrol.bukkit,
+ com.timethor.terracontrol.bukkit.commands,
+ com.timethor.terracontrol.bukkit.structuregens,
+ com.timethor.terracontrol.bukkit.util

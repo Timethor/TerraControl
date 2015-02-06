@@ -144,6 +144,15 @@ public class BO3 implements StructuredCustomObject {
         return true;
     }
 
+    /**
+     *
+     * @param world
+     * @param random
+     * @param x
+     * @param z
+     * <p/>
+     * @return
+     */
     protected boolean spawn(TerraWorld world, Random random, int x, int z) {
         Rotation rotation = settings.rotateRandomly ? Rotation.getRandomRotation(random) : Rotation.NORTH;
         int y = 0;

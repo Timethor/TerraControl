@@ -14,23 +14,69 @@ import java.util.Collections;
 public enum BO3Settings implements TerraSetting {
     // BO3
 
+    /**
+     *
+     */
     author("Unknown"),
+    /**
+     *
+     */
     description("No description given"),
     // Main settings
+    /**
+     *
+     */
     tree(true),
+    /**
+     *
+     */
     frequency(1),
+    /**
+     *
+     */
     rarity(100.0),
+    /**
+     *
+     */
     rotateRandomly(false),
+    /**
+     *
+     */
     spawnHeight(SpawnHeightSetting.highestBlock),
+    /**
+     *
+     */
     minHeight(0),
+    /**
+     *
+     */
     maxHeight(256),
+    /**
+     *
+     */
     maxBranchDepth(10),
+    /**
+     *
+     */
     excludedBiomes("All", SettingsType.StringArray),
     // Source block settings
+    /**
+     *
+     */
     sourceBlock(MaterialCatalog.AIR.id),
+    /**
+     *
+     */
     outsideSourceBlock(OutsideSourceBlock.placeAnyway),
+    /**
+     *
+     */
     maxPercentageOutsideSourceBlock(100);
 
+    /**
+     *
+     * @return
+     */
     @Override
     public ArrayList<Integer> intArrayListValue() {
         return (ArrayList<Integer>) value;
@@ -59,6 +105,10 @@ public enum BO3Settings implements TerraSetting {
             this.height = height;
         }
 
+        /**
+         *
+         * @return
+         */
         public SpawnHeight toSpawnHeight() {
             return height;
         }
@@ -137,21 +187,37 @@ public enum BO3Settings implements TerraSetting {
         returnType = SettingsType.Boolean;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int intValue() {
         return (Integer) value;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double doubleValue() {
         return (Double) value;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public float floatValue() {
         return (Float) value;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Enum<?> enumValue() {
         return (Enum<?>) value;
@@ -165,22 +231,38 @@ public enum BO3Settings implements TerraSetting {
         return returnType;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String stringValue() {
         return (String) value;
     }
 
+    /**
+     *
+     * @return
+     */
     @SuppressWarnings("unchecked")
     @Override
     public ArrayList<String> stringArrayListValue() {
         return (ArrayList<String>) value;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean booleanValue() {
         return (Boolean) value;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long longValue() {
         return (Long) value;

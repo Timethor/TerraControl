@@ -37,6 +37,7 @@ public abstract class EventHandler {
      * @param y      The y of the object origin.
      * @param z      The z of the object origin.
      * <p/>
+     * @param isCancelled 
      * @return Whether the event should be canceled. You cannot un-"cancel"
      *         events, so returning true when the event is already canceled
      *         does nothing.
@@ -58,6 +59,7 @@ public abstract class EventHandler {
      * @param chunkZ         The z coordinate of the chunk the resource
      *                       will spawn in.
      * <p/>
+     * @param isCancelled 
      * @return Whether the event should be canceled. You cannot un-"cancel"
      *         events, so returning true when the event is already canceled
      *         does nothing.

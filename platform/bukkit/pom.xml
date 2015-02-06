@@ -18,7 +18,7 @@
     <url>http://www.github.org/Timethor/TerraControl</url>
     
     <!-- Current Version of Bukkit side of the code -->
-    <version>Bukkit.0.0.1-SNAPSHOT</version>
+    <version>Bukkit.0.0.2-SNAPSHOT</version>
     <!-- This tells Maven to make us a *.jar file -->
     <packaging>jar</packaging>
 
@@ -27,8 +27,8 @@
         <!-- Change these values to the new and old version paths for MC and bukkit
         EX: net.minecraft.server.v1_5_R2.* will change to net.minecraft.server.v1_5_R3.*
         when you use v1_5_R2 for old and v1_5_R3 for new                           -->
-        <minecraft.import.ver.new>v?_?_R?+</minecraft.import.ver.new>
-        <minecraft.import.ver.old>v?_?_R?</minecraft.import.ver.old>
+        <minecraft.import.ver.new>v1_6_R2</minecraft.import.ver.new>
+        <minecraft.import.ver.old>v1_5_R3</minecraft.import.ver.old>
     </properties>
 
     <scm>
@@ -38,10 +38,11 @@
     </scm>
 
     <build>
-        <directory>build</directory>
-        <outputDirectory>build/classes</outputDirectory>
-        <finalName>${project.artifactId}</finalName>
-        <testOutputDirectory>build/test-classes</testOutputDirectory>
+        <defaultGoal>clean install</defaultGoal>
+        <directory>target/build</directory>
+        <outputDirectory>target/build/classes</outputDirectory>
+        <finalName>TerraControl_${project.version}</finalName>
+        <testOutputDirectory>target/build/test-classes</testOutputDirectory>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -99,6 +100,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <minimizeJar>true</minimizeJar>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -121,7 +133,7 @@
             <!-- This will download the version of Bukkit listed upon build, no more DLing, copying, compiling! -->
             <groupId>org.bukkit</groupId>
             <artifactId>craftbukkit</artifactId>
-            <version>1.5.2-R1.1-SNAPSHOT</version>
+            <version>1.6.2-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>

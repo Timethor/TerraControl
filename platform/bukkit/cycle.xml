@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ASCII"?>
+<options:CycleExplorerData xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:options="options.xmi">
+  <options interactive="false" level="-1" showScope="InDiagram" properties="ModelFrozen=true;wireOptions=4;Product=eDepend;ComputedContent=true;dependencyFilter=Standard::Derive,Soyatec::Implement,Standard::Instantiate,Standard::Create,Standard::Call,Standard::Send,Soyatec::Access,Soyatec::Import,;displayOptions=1"/>
+  <cycleSets>
+    <groups name="Cycle-4  (3 elements and 1 sub cycles)" size="3">
+      <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit/TCListener</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCListener-Soyatec::Import->com.timethor.terracontrol.bukkit/TCSender</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCSender-Soyatec::Access->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCSender-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+      <subGroups name="Cycle-4.1  (2 elements)" size="2">
+        <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit/TCListener</ids>
+        <ids>com.timethor.terracontrol.bukkit/TCListener-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+        <ids>com.timethor.terracontrol.bukkit/TCListener-Soyatec::Access->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+      </subGroups>
+    </groups>
+    <groups name="Cycle-5  (4 elements and 1 sub cycles)" size="4">
+      <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit/TCListener</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCListener-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+      <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCChunkGenerator</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCChunkGenerator-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+      <subGroups name="Cycle-5.1  (3 elements and 1 sub cycles)" size="3">
+        <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+        <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCChunkGenerator</ids>
+        <ids>com.timethor.terracontrol.bukkit/TCChunkGenerator-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+        <subGroups name="Cycle-5.1.1  (2 elements)" size="2">
+          <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit/TCChunkGenerator</ids>
+          <ids>com.timethor.terracontrol.bukkit/TCChunkGenerator-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+        </subGroups>
+      </subGroups>
+    </groups>
+    <groups name="Cycle-6  (6 elements and 2 sub cycles)" size="6">
+      <ids>com.timethor.terracontrol.bukkit.commands/BaseCommand-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+      <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCChunkGenerator</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCChunkGenerator-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/TCCommandExecutor</ids>
+      <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/HelpCommand</ids>
+      <ids>com.timethor.terracontrol.bukkit.commands/HelpCommand-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+      <ids>com.timethor.terracontrol.bukkit.commands/HelpCommand-Soyatec::Access->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+      <subGroups name="Cycle-6.1  (4 elements and 2 sub cycles)" size="4">
+        <ids>com.timethor.terracontrol.bukkit.commands/BaseCommand-Soyatec::Access->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+        <ids>com.timethor.terracontrol.bukkit.commands/BaseCommand-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+        <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/TCCommandExecutor</ids>
+        <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/HelpCommand</ids>
+        <ids>com.timethor.terracontrol.bukkit.commands/HelpCommand-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+        <ids>com.timethor.terracontrol.bukkit.commands/HelpCommand-Soyatec::Access->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+        <subGroups name="Cycle-6.1.1  (3 elements and 2 sub cycles)" size="3">
+          <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/TCCommandExecutor</ids>
+          <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/HelpCommand</ids>
+          <ids>com.timethor.terracontrol.bukkit.commands/HelpCommand-Soyatec::Access->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+          <ids>com.timethor.terracontrol.bukkit.commands/HelpCommand-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+          <subGroups name="Cycle-6.1.1.1  (2 elements)" size="2">
+            <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/TCCommandExecutor</ids>
+            <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+          </subGroups>
+          <subGroups name="Cycle-6.1.1.2  (2 elements)" size="2">
+            <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/HelpCommand</ids>
+            <ids>com.timethor.terracontrol.bukkit.commands/HelpCommand-Soyatec::Access->com.timethor.terracontrol.bukkit.commands/TCCommandExecutor</ids>
+          </subGroups>
+        </subGroups>
+        <subGroups name="Cycle-6.1.2  (3 elements)" size="3">
+          <ids>com.timethor.terracontrol.bukkit.commands/BaseCommand-Soyatec::Access->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+          <ids>com.timethor.terracontrol.bukkit.commands/BaseCommand-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+          <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/TCCommandExecutor</ids>
+          <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+          <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Access->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+        </subGroups>
+      </subGroups>
+      <subGroups name="Cycle-6.2  (5 elements)" size="5">
+        <ids>com.timethor.terracontrol.bukkit.commands/BaseCommand-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+        <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCChunkGenerator</ids>
+        <ids>com.timethor.terracontrol.bukkit/TCChunkGenerator-Soyatec::Import->com.timethor.terracontrol.bukkit/TCPlugin</ids>
+        <ids>com.timethor.terracontrol.bukkit/TCPlugin-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/TCCommandExecutor</ids>
+        <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Import->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+        <ids>com.timethor.terracontrol.bukkit.commands/TCCommandExecutor-Soyatec::Access->com.timethor.terracontrol.bukkit.commands/BaseCommand</ids>
+      </subGroups>
+    </groups>
+  </cycleSets>
+  <cycleSets>
+    <groups name="Cycle-1  (2 elements)" size="2">
+      <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCWorldProvider</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCWorldProvider-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+    </groups>
+    <groups name="Cycle-2  (2 elements)" size="2">
+      <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCWorldChunkManager</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCWorldChunkManager-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCWorldChunkManager-Soyatec::Access->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+    </groups>
+    <groups name="Cycle-3  (3 elements and 1 sub cycles)" size="3">
+      <ids>com.timethor.terracontrol.bukkit/TCChunkGenerator-Soyatec::Import->com.timethor.terracontrol.bukkit/TCBlockPopulator</ids>
+      <ids>com.timethor.terracontrol.bukkit/TCBlockPopulator-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+      <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCChunkGenerator</ids>
+      <subGroups name="Cycle-3.1  (2 elements)" size="2">
+        <ids>com.timethor.terracontrol.bukkit/TCChunkGenerator-Soyatec::Import->com.timethor.terracontrol.bukkit/BukkitWorld</ids>
+        <ids>com.timethor.terracontrol.bukkit/BukkitWorld-Soyatec::Import->com.timethor.terracontrol.bukkit/TCChunkGenerator</ids>
+      </subGroups>
+    </groups>
+  </cycleSets>
+</options:CycleExplorerData>

@@ -1,15 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
-    <!--    <parent>
-        <groupId>com.timethor.minecraft</groupId>
-        <artifactId>terracontrol</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
-    </parent>-->
-    
-    <!-- Basic Info -->
+
     <groupId>com.timethor.minecraft</groupId>
     <artifactId>terracontrol-core</artifactId>
     <name>TerraControl::Core</name>
@@ -32,10 +24,11 @@
     </scm>
 
     <build>
-        <directory>build</directory>
-        <outputDirectory>build/classes</outputDirectory>
-        <finalName>${project.artifactId}</finalName>
-        <testOutputDirectory>build/test-classes</testOutputDirectory>
+        <defaultGoal>clean install</defaultGoal>
+        <directory>target/build</directory>
+        <outputDirectory>target/build/classes</outputDirectory>
+        <finalName>TerraControl_${project.version}</finalName>
+        <testOutputDirectory>target/build/test-classes</testOutputDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -46,7 +39,7 @@
                     <goals>
                         <goal>jar</goal>
                     </goals>
-                    <outputDirectory>dist</outputDirectory>
+                    <outputDirectory>target/dist</outputDirectory>
                 </configuration>
             </plugin>  
             <plugin>

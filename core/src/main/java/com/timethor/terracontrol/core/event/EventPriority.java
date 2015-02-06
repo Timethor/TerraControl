@@ -1,5 +1,9 @@
 package com.timethor.terracontrol.core.event;
 
+/**
+ *
+ * @author Timethor
+ */
 public enum EventPriority {
 
     /**

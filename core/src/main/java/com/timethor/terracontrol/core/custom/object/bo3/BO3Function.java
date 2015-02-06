@@ -9,6 +9,10 @@ import com.timethor.terracontrol.core.configuration.ConfigFunction;
  */
 public abstract class BO3Function extends ConfigFunction<BO3Config> {
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Class<BO3Config> getHolderType() {
         return BO3Config.class;

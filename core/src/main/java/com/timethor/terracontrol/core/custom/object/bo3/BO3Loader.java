@@ -14,12 +14,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
+/**
+ *
+ * @author Timethor
+ */
 public class BO3Loader implements CustomObjectLoader {
     // A list of already loaded meta Tags. The path is the key, a NBT Tag
     // is the value.
 
     private static Map<String, Tag> loadedTags = new HashMap<>();
 
+    /**
+     *
+     */
     public BO3Loader() {
         // Register BO3 ConfigFunctions
         TerraControl.getConfigFunctionsManager().registerConfigFunction("Block", BlockFunction.class);
@@ -35,6 +42,13 @@ public class BO3Loader implements CustomObjectLoader {
     }
 
     // Actually, we use tryToClose(..) to close the stream
+    /**
+     *
+     * @param name
+     * @param bo3File
+     *                <p/>
+     * @return
+     */
     public static Tag loadMetadata(String name, File bo3File) {
         String path = bo3File.getParent() + File.separator + name;
 
@@ -96,6 +110,13 @@ public class BO3Loader implements CustomObjectLoader {
 
     }
 
+    /**
+     *
+     * @param pathOnDisk
+     * @param metadata
+     *                   <p/>
+     * @return
+     */
     public static Tag registerMetadata(String pathOnDisk, Tag metadata) {
         // Add it to the cache
         loadedTags.put(pathOnDisk, metadata);

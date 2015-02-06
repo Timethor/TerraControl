@@ -3,35 +3,41 @@ package com.timethor.terracontrol.core.custom.object.bo2;
 import com.timethor.terracontrol.core.util.BlockHelper;
 
 /**
- * @author   Timethor
+ * @author Timethor
  */
 public class ObjectCoordinate {
 
     /**
-	 */
+     */
     public int x;
     /**
-	 */
+     */
     public int y;
     /**
-	 */
+     */
     public int z;
     /**
-	 */
+     */
     private int hash;
     /**
-	 */
+     */
     public int blockId;
     /**
-	 */
+     */
     public int blockData;
     /**
-	 */
+     */
     public int BranchDirection;
     /**
-	 */
+     */
     public int BranchOdds;
 
+    /**
+     *
+     * @param _x
+     * @param _y
+     * @param _z
+     */
     public ObjectCoordinate(int _x, int _y, int _z) {
         this.x = _x;
         this.y = _y;
@@ -57,6 +63,10 @@ public class ObjectCoordinate {
         return hash;
     }
 
+    /**
+     *
+     * @return
+     */
     public ObjectCoordinate Rotate() {
         ObjectCoordinate newCoordinate = new ObjectCoordinate(this.z, this.y, (this.x * -1));
         newCoordinate.blockId = this.blockId;
@@ -74,11 +84,24 @@ public class ObjectCoordinate {
 
     }
 
+    /**
+     *
+     * @param key
+     *            <p/>
+     * @return
+     */
     public static boolean isCoordinateString(String key) {
         String[] coordinates = key.split(",");
         return coordinates.length == 3;
     }
 
+    /**
+     *
+     * @param key
+     * @param value
+     *              <p/>
+     * @return
+     */
     public static ObjectCoordinate getCoordinateFromString(String key, String value) {
         String[] coordinates = key.split(",", 3);
         if (coordinates.length != 3) {

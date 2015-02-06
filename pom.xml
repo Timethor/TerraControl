@@ -16,7 +16,7 @@
     <modules>
         <module>core</module>
         <module>platform/bukkit</module>
-        <module>platform/forge</module>
+        <!--<module>platform/forge</module>-->
         <module>platform</module>
     </modules>
         
@@ -27,6 +27,10 @@
     </scm>
 
     <build>
+        <defaultGoal>clean install</defaultGoal>
+        <directory>target/build</directory>
+        <outputDirectory>target/build/classes</outputDirectory>
+        <testOutputDirectory>target/build/test-classes</testOutputDirectory>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -38,7 +42,7 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                        <outputDirectory>dist</outputDirectory>
+                        <outputDirectory>target/dist</outputDirectory>
                     </configuration>
                 </plugin>  
                 <plugin>
